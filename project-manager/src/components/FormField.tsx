@@ -12,7 +12,7 @@ export default function FormField({
 			<label htmlFor={htmlFor} className={`flex flex-col text-vinho font-medium font-sm ${className}`}>
 				{labelText}
 				<input
-					className="rounded-md border p-2 border-slate-200 placeholder:font-normal mt-1"
+					className="rounded-md border p-2 border-black border-opacity-10 placeholder:font-normal placeholder:text-black placeholder:opacity-50 mt-1"
 					type={inputType}
 					id={htmlFor}
 					placeholder={placeholder}
