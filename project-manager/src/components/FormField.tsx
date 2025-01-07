@@ -8,9 +8,10 @@ export default function FormField({
 }: FormFieldControl) {
 	return (
 		<>
-			<label htmlFor={htmlFor} className="flex flex-col text-green-600">
+			<label htmlFor={htmlFor} className="flex flex-col text-vinho font-medium font-sm">
 				{labelText}
 				<input
+					className="rounded-md border p-2 border-slate-200 placeholder:font-normal mt-1"
 					type={inputType}
 					id={htmlFor}
 					placeholder={placeholder}
