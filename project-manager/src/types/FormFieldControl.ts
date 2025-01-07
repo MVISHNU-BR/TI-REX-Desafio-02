@@ -4,5 +4,6 @@ export interface FormFieldControl{
   labelText: string,
   htmlFor: string,
   inputType: InputType,
-  placeholder: string
+  placeholder: string,
+  className?: string
 }
