@@ -8,7 +8,7 @@ interface HeaderProps {
 export default function Header({ children }: HeaderProps) {
   return (
     <>
-      <header className="bg-azul-escuro w-full min-h-20 h-full flex items-center justify-between">
+      <header className="bg-azul-escuro w-screen min-h-20 flex items-center justify-between gap-2 px-5">
         <Link
           to="/"
           className="flex gap-5 items-center pl-5 
