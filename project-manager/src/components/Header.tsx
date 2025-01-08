@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import logo from "../assets/logo.svg";
-import Button from "./Button";
+import {Button} from "./Button";
 export default function Header() {
   return (
     <>
