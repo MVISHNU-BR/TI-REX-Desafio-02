@@ -1,16 +1,13 @@
-<<<<<<< Updated upstream
 import Header from "../components/Header";
 import homeBanner from "../assets/homeBanner.jpg";
 import person from "../assets/homePerson.png";
 import Button from "../components/Button";
-=======
-import Header from '../components/Header';
-
->>>>>>> Stashed changes
+import FeaturedTools from "../components/FeaturedTools";
+import TheManager from "../components/TheManager";
 function Home() {
   return (
     <>
-      <div className="xl:absolute xl:z-10">
+      <div className="xl:absolute xl:z-10 w-full">
         <Header />
       </div>
       <main className="h-screen">
@@ -54,6 +51,8 @@ function Home() {
             />
           </div>
         </section>
+        <TheManager />
+        <FeaturedTools />
         {/* <section className="relative z-50"></section> renan coloca o seu codigo dentro desta */}
       </main>
     </>
