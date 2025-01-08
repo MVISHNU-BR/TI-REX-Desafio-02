@@ -2,11 +2,14 @@ import Header from "../components/Header";
 import homeBanner from "../assets/homeBanner.jpg";
 import person from "../assets/homePerson.png";
 import Button from "../components/Button";
+import LoginButton from "../components/LoginButton";
 function Home() {
   return (
     <>
       <div className="xl:absolute xl:z-10">
-        <Header />
+        <Header>
+          <LoginButton/>
+        </Header>
       </div>
       <main className="h-screen">
         <section className="min-h-[700px] h-full z-80 w-full flex flex-col items-center justify-center gap-5 relative overflow-hidden sm:gap-16 sm:min-h-[644px] px-5 xl:flex-row xl:gap-[344px] xl:max-h-[724px]  xl:items-start xl:pt-[169px]">
