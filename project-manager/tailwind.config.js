@@ -22,6 +22,8 @@ export default {
         'verde-claro': '#C7F0D6',
         'vermelho': '#BD2323',
         'branco': '#FFFFFF',
+        'azul-hover': '#268FE4',
+        
 
       },
     },
