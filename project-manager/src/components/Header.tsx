@@ -1,10 +1,19 @@
 import { Link } from "react-router";
 import logo from "../assets/logo.svg";
+<<<<<<< HEAD
 import {Button} from "./Button";
 export default function Header() {
+=======
+
+interface HeaderProps {
+  children?: React.ReactNode;
+}
+
+export default function Header({ children }: HeaderProps) {
+>>>>>>> 8fba190fae5bdb76a76611484db8804e3d706e53
   return (
     <>
-      <header className="bg-azul-escuro w-screen min-h-20 flex items-center justify-between gap-2 fixed top-0 left-0">
+      <header className="bg-azul-escuro w-screen min-h-20 flex items-center justify-between gap-2 px-5">
         <Link
           to="/"
           className="flex gap-5 items-center pl-5 
@@ -15,9 +24,7 @@ export default function Header() {
             Project Manager
           </h1>
         </Link>
-        <div className="flex items-center justify-center pr-5">
-          <Button />
-        </div>
+        <div className="flex items-center justify-center pr-5">{children}</div>
       </header>
     </>
   );
