@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
 import Header from "../components/Header";
 import homeBanner from "../assets/homeBanner.jpg";
 import person from "../assets/homePerson.png";
 import Button from "../components/Button";
-=======
-import Header from '../components/Header';
-
->>>>>>> Stashed changes
 function Home() {
   return (
     <>
