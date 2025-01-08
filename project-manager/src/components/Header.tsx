@@ -1,16 +1,11 @@
 import { Link } from "react-router";
 import logo from "../assets/logo.svg";
-<<<<<<< HEAD
-import {Button} from "./Button";
-export default function Header() {
-=======
 
 interface HeaderProps {
   children?: React.ReactNode;
 }
 
 export default function Header({ children }: HeaderProps) {
->>>>>>> 8fba190fae5bdb76a76611484db8804e3d706e53
   return (
     <>
       <header className="bg-azul-escuro w-screen min-h-20 flex items-center justify-between gap-2 px-5">
