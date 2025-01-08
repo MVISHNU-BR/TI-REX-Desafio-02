@@ -7,20 +7,18 @@ interface HeaderProps {
 
 export default function Header({ children }: HeaderProps) {
   return (
-    <div>
-      <header className="bg-azul-escuro w-full min-h-20 flex items-center justify-between gap-2 px-5">
-        <Link
-          to="/"
-          className="flex gap-5 items-center pl-5 
+    <header className="bg-azul-escuro w-full min-h-20 flex items-center justify-between gap-2 px-5">
+      <Link
+        to="/"
+        className="flex gap-5 items-center pl-5 
         "
-        >
-          <img src={logo} width={50} height={50} alt="logo project manager" />
-          <h1 className="text-white text-lg sm:text-xl lg:text-[28px] text-nowrap">
-            Project Manager
-          </h1>
-        </Link>
-        <div className="flex items-center justify-center pr-5">{children}</div>
-      </header>
-    </div>
+      >
+        <img src={logo} width={50} height={50} alt="logo project manager" />
+        <h1 className="text-white text-lg sm:text-xl lg:text-[28px] text-nowrap">
+          Project Manager
+        </h1>
+      </Link>
+      <div className="flex items-center justify-center pr-5">{children}</div>
+    </header>
   );
 }

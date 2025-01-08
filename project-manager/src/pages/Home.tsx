@@ -53,7 +53,6 @@ function Home() {
         </section>
         <TheManager />
         <FeaturedTools />
-        {/* <section className="relative z-50"></section> renan coloca o seu codigo dentro desta */}
       </main>
     </>
   );
