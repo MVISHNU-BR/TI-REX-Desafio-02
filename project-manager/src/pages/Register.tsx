@@ -8,11 +8,8 @@ export default function Register() {
       <Header />
         <section className="">
           <div className="bg-[url('src/assets/register-bg-phone.png')] bg-no-repeat bg-cover bg-center py-9 px-5 min-h-screen flex items-center justify-center sm:py-36 sm:px-11 lg:bg-none lg:p-0 lg:flex lg:h-full ">
-  
-            <div className="hidden lg:block self-stretch max-w-[626px] w-full lg:bg-[url('src/assets/login-desktop.png')] bg-no-repeat bg-cover bg-center">
-            </div>
 
-            <main className="w-full bg-white rounded-3xl py-6 px-3.5 sm:px-16 lg:pt-11 lg:pb-12 lg:px-32">
+            <main className="w-full bg-white rounded-3xl pt-6 pb-7 px-4 sm:py-[31px] sm:px-[68px] lg:pt-[58px] lg:pb-[30px] lg:pl-[105px] lg:pr-48 ">
               <h1 className=" text-center text-vinho text-2xl font-bold mb-6 leading-loose sm:text-left sm:text-4xl">
                 Sign up Information
               </h1>
@@ -62,9 +59,9 @@ export default function Register() {
                   inputType="password"
                   labelText="Password"
                   placeholder="Enter your password"
-                  className="mb-6"
+                  className="mb-8"
                 />
-                <button className="mb-5 sm:mb-7">Create an account</button>
+                <button className="mb-5 sm:mb-8">Create an account</button>
               </form>
               <p className="text-center text-vinho text-base leading-6 mb-2">
                 or sign in with...
@@ -84,6 +81,8 @@ export default function Register() {
                 </button>
               </div>
             </main>
+              <div className="hidden lg:block self-stretch max-w-[626px] w-full lg:bg-[url('src/assets/register-desktop.png')] bg-no-repeat bg-cover bg-center">
+              </div>
           </div>
         </section>
       </>
