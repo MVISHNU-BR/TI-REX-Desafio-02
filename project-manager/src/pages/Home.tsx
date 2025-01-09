@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import homeBanner from "../assets/homeBanner.jpg";
 import person from "../assets/homePerson.png";
@@ -5,7 +6,6 @@ import Button from "../components/Button";
 import FeaturedTools from "../components/FeaturedTools";
 import TheManager from "../components/TheManager";
 import LoginButton from "../components/LoginButton";
-import Footer from "../components/Footer";
 function Home() {
   return (
     <>
