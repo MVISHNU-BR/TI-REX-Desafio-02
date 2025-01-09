@@ -5,8 +5,11 @@ export default function FormField({
 	htmlFor,
 	inputType,
 	placeholder,
-	className
+	className,
+	value ="",
+  onChange,
 }: FormFieldControl) {
+
 	return (
 		<>
 			<label htmlFor={htmlFor} className={`flex flex-col text-vinho font-medium font-sm ${className}`}>
@@ -16,6 +19,8 @@ export default function FormField({
 					type={inputType}
 					id={htmlFor}
 					placeholder={placeholder}
+					value={value}
+        	onChange={(e) => onChange?.(e.target.value)}
 				/>
 			</label>
 		</>

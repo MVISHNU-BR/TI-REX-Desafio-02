@@ -4,7 +4,18 @@ import person from "../assets/homePerson.png";
 import Button from "../components/Button";
 import FeaturedTools from "../components/FeaturedTools";
 import TheManager from "../components/TheManager";
+import { useClerk } from "@clerk/react-router";
+import { useEffect } from "react";
+
+
 function Home() {
+  const { signOut } = useClerk();
+  useEffect(()=> {
+    signOut({
+      redirectUrl: '/',
+    })
+  }, [signOut])
+
   return (
     <>
       <div className="xl:absolute xl:z-10 w-full">

@@ -1,8 +1,52 @@
 // TODO: adicionar componente separado para os botões
 import Header from "../components/Header";
 import FormField from "../components/FormField";
+import { useSignIn } from "@clerk/react-router";
+import { useState } from 'react';
 
 export default function Login() {
+
+	  // Estados para email/senha e mensagens de erro
+		const [email, setEmail] = useState('');
+		const [password, setPassword] = useState('');
+		const [error, setError] = useState('');
+
+		const { signIn, isLoaded } = useSignIn();
+
+
+		  // Função para autenticar com email/senha
+			const handleEmailPasswordLogin = async (e) => {
+				e.preventDefault();
+				setError(''); // Limpa mensagens de erro
+		
+				if (!isLoaded) return;
+		
+				try {
+					await signIn.create({
+						identifier: email,
+						password,
+					});
+					// Redirecionar para o dashboard ou outra página após login bem-sucedido
+					window.location.href = '/dashboard';
+				} catch (err) {
+					setError('Erro ao autenticar. Verifique suas credenciais.');
+				}
+			};
+		
+			// Função para autenticar com provedores sociais
+			// const handleOAuthLogin = async (provider) => {
+			// 	if (!isLoaded) return;
+		
+			// 	try {
+			// 		await signIn.authenticateWithRedirect({
+			// 			strategy: `oauth_${provider}`, // Estratégia do provedor
+			// 			redirectUrl: '/dashboard', // Página para redirecionar após login
+			// 			redirectUrlComplete: '/dashboard', // Opcional
+			// 		});
+			// 	} catch (err) {
+			// 		setError(`Erro ao autenticar com ${provider}.`);
+			// 	}
+			// };
 
 	return (
     <>
@@ -29,22 +73,26 @@ export default function Login() {
 								sign up
 							</a>
 						</p>
-						<form action="">
-							<FormField
+						<form action="" onSubmit={handleEmailPasswordLogin}>
+							{/* <FormField
 								htmlFor="email"
 								inputType="email"
 								labelText="Email"
 								placeholder="Enter your email"
 								className="mb-6"
-							/>
-							<FormField
+							/> */}
+							<label htmlFor="email">Email</label>
+							<input type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
+							<label htmlFor="password">password</label>
+							<input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+							{/* <FormField
 								htmlFor="password"
 								inputType="password"
 								labelText="Password"
 								placeholder="Enter your password"
 								className="mb-11"
-							/>
-							<button className="mb-10 sm:mb-7">Login</button>
+							/> */}
+							<button className="mb-10 sm:mb-7" type="submit">Login</button>
 						</form>
 						<p className="text-center text-vinho text-base leading-6 mb-2">
 							or sign in with...
