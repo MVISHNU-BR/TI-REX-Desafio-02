@@ -1,10 +1,11 @@
-import Header from '../components/Header';
-import homeBanner from '../assets/homeBanner.jpg';
-import person from '../assets/homePerson.png';
-import Button from '../components/Button';
-import FeaturedTools from '../components/FeaturedTools';
-import TheManager from '../components/TheManager';
-import LoginButton from '../components/LoginButton';
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import homeBanner from "../assets/homeBanner.jpg";
+import person from "../assets/homePerson.png";
+import Button from "../components/Button";
+import FeaturedTools from "../components/FeaturedTools";
+import TheManager from "../components/TheManager";
+import LoginButton from "../components/LoginButton";
 function Home() {
   return (
     <>
@@ -24,7 +25,7 @@ function Home() {
           />
           <div className="bg-black  bg-opacity-55 rounded-[30px] max-h-[285px]  h-full max-w-[353px] w-full flex flex-col items-center gap-4 py-7 px-5 sm:max-w-[656px] sm:max-h-[258px] md:items-start sm:px-[68px]">
             <h2 className="text-2xl font-bold text-white text-nowrap sm:text-[40px]">
-              Welcome to{' '}
+              Welcome to{" "}
               <span className="text-azul-claro">Project Manager</span>
             </h2>
             <p className="text-white text-sm leading-6 text-center max-w-[236px] sm:max-w-[520px] sm:text-base sm:text-left">
@@ -58,6 +59,7 @@ function Home() {
         </section>
         <TheManager />
         <FeaturedTools />
+        <Footer />
       </main>
     </>
   );
