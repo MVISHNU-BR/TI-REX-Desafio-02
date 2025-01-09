@@ -53,7 +53,6 @@ export default function Footer() {
           <a href="/privacy" className="hover:underline text-xl font-medium">
             Privacy Policy
           </a>
-          <a href="/terms" className="hover:underline text-xl font-medium">
             Terms of Use
           </a>
         </div>
