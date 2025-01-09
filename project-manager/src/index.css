@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.debug {
+    border: 1px solid red;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
