@@ -6,7 +6,7 @@ import tool from '../assets/Tool.png';
 const FeaturedTools = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-[60px] py-[59px] px-[24px] md:py-[105px] md:px-[170px] bg-azul-dessaturado ">
-      <div className="flex flex-col justify-center items-center text-center  gap-6 w-[1100px] h-[168px]">
+      <div className="flex flex-col justify-center items-center text-center  gap-6 lg:w-[1100px] h-[168px]">
         <h1 className="md:text-[40px] text-[25px] leading-[48px] text-amarelo-claro font-bold">
           Featured Tools
         </h1>
