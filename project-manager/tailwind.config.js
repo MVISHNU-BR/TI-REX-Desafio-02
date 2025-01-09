@@ -21,6 +21,10 @@ export default {
         'verde': '#22C55E',
         'verde-claro': '#C7F0D6',
         'vermelho': '#BD2323',
+        'branco': '#FFFFFF',
+        'azul-hover': '#268FE4',
+        
+
       },
     },
   },
