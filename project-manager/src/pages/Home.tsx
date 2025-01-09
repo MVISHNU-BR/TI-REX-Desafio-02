@@ -16,7 +16,7 @@ function Home() {
         </Header>
       </div>
       <main className="h-screen">
-        <section className="min-h-[700px] h-full  w-full flex flex-col items-center justify-center gap-5 relative overflow-hidden sm:gap-16 sm:min-h-[644px] px-5 xl:flex-row xl:gap-[344px] xl:max-h-[724px]  xl:items-start xl:pt-[169px]">
+        <section className="min-h-[700px] h-full  w-full flex flex-col items-center justify-center gap-5 relative overflow-hidden sm:gap-16 sm:min-h-[644px] px-5 xl:flex-row xl:gap-[344px] xl:min-h-[724px] xl:max-h-[724px] xl:items-start xl:pt-[169px]">
           <img
             src={homeBanner}
             className="opacity-95 w-screen h-full object-cover absolute top-0 xl:top-12 left-0 -z-50"
