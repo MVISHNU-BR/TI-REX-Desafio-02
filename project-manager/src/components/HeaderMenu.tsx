@@ -31,15 +31,15 @@ export default function HeaderMenu() {
   return (
     <nav className="w-full h-20 px-5 flex justify-end items-center font-roboto text-lg">
       <div className="hidden lg:flex items-center gap-10">
-        <a href="#home" className="text-white">Home</a>
-        <a href="#about" className="text-white">About</a>
-        <a href="#settings" className="text-white">Settings</a>
-        <a href="#profile" className="text-white">Profile</a>
-        <div className="border border-white border-opacity-10 rounded-[6px] w-[200px] h-[40px] flex items-center">
+        <a href="#home" className="text-white hover:underline hover:decoration-solid hover:decoration-branco hover:underline-offset-4 transition duration-300">Home</a>
+        <a href="#about" className="text-white hover:underline hover:decoration-solid hover:decoration-branco hover:underline-offset-4 transition duration-300">About</a>
+        <a href="#settings"className="text-white hover:underline hover:decoration-solid hover:decoration-branco hover:underline-offset-4 transition duration-300">Settings</a>
+        <a href="#profile" className="text-white hover:underline hover:decoration-solid hover:decoration-branco hover:underline-offset-4 transition duration-300">Profile</a>
+        <div className="border border-white border-opacity-10 rounded-[6px] w-[200px] h-[40px] flex items-center hover:border-azul-hover transition duration-300">
           <input
             type="text"
             placeholder="Search in site"
-            className="outline-none text-white bg-transparent w-full h-full text-center"
+            className="outline-none text-white bg-transparent w-full h-full text-center hover:border-azul-hover transition duration-300"
             
           />          
           <button className="p-1">
