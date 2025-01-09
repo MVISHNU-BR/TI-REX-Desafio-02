@@ -1,6 +1,7 @@
 // TODO: adicionar componente separado para os botões
 import Header from "../components/Header";
 import FormField from "../components/FormField";
+import { FacebookButton, GoogleButton } from "../components/SocialLoginButtons";
 
 export default function Login() {
 
@@ -50,18 +51,8 @@ export default function Login() {
 							or sign in with...
 						</p>
 						<div className="w-full flex justify-center gap-3">
-							<button className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center">
-								<img
-									src="src/assets/facebook-logo-colored.svg"
-									alt=""
-								/>
-							</button>
-							<button className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center">
-								<img
-									src="src/assets/google-logo-colored.svg"
-									alt=""
-								/>
-							</button>
+							<FacebookButton />
+							<GoogleButton />
 						</div>
 					</main>
 				</div>
