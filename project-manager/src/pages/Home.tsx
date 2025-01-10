@@ -7,7 +7,7 @@ import FeaturedTools from "../components/FeaturedTools";
 import TheManager from "../components/TheManager";
 import { useClerk } from "@clerk/react-router";
 import { useEffect } from "react";
-import LoginButton from "../components/LoginButton";
+import LinkButton from "../components/LinkButton";
 
 function Home() {
   const { signOut } = useClerk();
@@ -22,7 +22,7 @@ function Home() {
       <div className="xl:absolute w-full">
         <Header>
           <div className="z-[3]">
-            <LoginButton />
+            <LinkButton location="/login" value="Login" />
           </div>
         </Header>
       </div>
