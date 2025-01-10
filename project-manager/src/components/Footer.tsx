@@ -44,15 +44,16 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center justify-center text-center">
-          <p className=" text-xl font-medium">
+          <p className=" text-xl font-normal">
             © 2024 Project Manager. All rights reserved.
           </p>
         </div>
 
         <div className="flex items-center justify-between gap-4">
-          <a href="/privacy" className="hover:underline text-xl font-medium">
+          <a href="/privacy" className="hover:underline text-xl font-normal">
             Privacy Policy
           </a>
+          <a href="/terms" className="hover:underline text-xl font-normal">
             Terms of Use
           </a>
         </div>
