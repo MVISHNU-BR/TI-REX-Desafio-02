@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { useState } from "react";
 import GoogleLoginButton, {
   FacebookLoginButton,
-} from "../components/SocialLoginButton";
+} from "../components/SocialRegisterButton";
 import Footer from "../components/Footer";
 
 export default function Register() {

@@ -3,6 +3,10 @@ import FormField from "../components/FormField";
 import { useSignIn } from "@clerk/clerk-react";
 import { useState } from "react";
 import Footer from "../components/Footer";
+import { Link } from "react-router";
+import GoogleLoginButton, {
+  FacebookLoginButton,
+} from "../components/SocialLoginButton";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -30,7 +34,6 @@ export default function Login() {
       console.log(err);
     }
   };
-
   return (
     <>
       <Header />
@@ -46,9 +49,9 @@ export default function Login() {
             </p>
             <p className="text-center sm:text-left text-vinho text-base mb-10">
               New here? Let's take you to{" "}
-              <a href="/signup" className="text-roxo-claro font-bold">
+              <Link to="/register" className="text-roxo-claro font-bold">
                 sign up
-              </a>
+              </Link>
             </p>
             <form onSubmit={handleEmailPasswordLogin}>
               <FormField
@@ -81,15 +84,8 @@ export default function Login() {
               or sign in with...
             </p>
             <div className="w-full flex justify-center gap-3">
-              <button className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center">
-                <img
-                  src="src/assets/facebook-logo-colored.svg"
-                  alt="Facebook"
-                />
-              </button>
-              <button className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center">
-                <img src="src/assets/google-logo-colored.svg" alt="Google" />
-              </button>
+              <FacebookLoginButton />
+              <GoogleLoginButton />
             </div>
           </main>
         </div>

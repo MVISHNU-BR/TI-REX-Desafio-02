@@ -1,15 +1,14 @@
 import { OAuthStrategy } from "@clerk/types";
-import { useSignIn } from "@clerk/clerk-react";
+import { useSignUp } from "@clerk/clerk-react";
 
 export default function GoogleLoginButton() {
-  const { signIn } = useSignIn();
+  const { signUp } = useSignUp();
 
-  if (!signIn) return null;
+  if (!signUp) return null;
 
   const signInWith = async () => {
     try {
-      // Inicia o fluxo de autenticação com redirecionamento
-      await signIn.authenticateWithRedirect({
+      await signUp.authenticateWithRedirect({
         strategy: "oauth_google" as OAuthStrategy,
         redirectUrl: "/register",
         redirectUrlComplete: "/dashboard",
@@ -30,14 +29,14 @@ export default function GoogleLoginButton() {
 }
 
 export function FacebookLoginButton() {
-  const { signIn } = useSignIn();
+  const { signUp } = useSignUp();
 
-  if (!signIn) return null;
+  if (!signUp) return null;
 
   const signInWith = async () => {
     try {
       // Inicia o fluxo de autenticação com redirecionamento
-      await signIn.authenticateWithRedirect({
+      await signUp.authenticateWithRedirect({
         strategy: "oauth_facebook" as OAuthStrategy,
         redirectUrl: "/register",
         redirectUrlComplete: "/dashboard",
