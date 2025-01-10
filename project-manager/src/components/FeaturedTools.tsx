@@ -5,7 +5,7 @@ import tool from '../assets/Tool.png';
 
 const FeaturedTools = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-[60px] py-[59px] px-[24px] md:py-[105px] md:px-[170px] bg-azul-dessaturado ">
+    <div className="flex flex-col items-center justify-center gap-[60px] py-[59px] px-[24px] bg-azul-dessaturado ">
       <div className="flex flex-col justify-center items-center text-center  gap-6 lg:w-[1100px] h-[168px]">
         <h1 className="md:text-[40px] text-[25px] leading-[48px] text-amarelo-claro font-bold">
           Featured Tools
@@ -17,7 +17,7 @@ const FeaturedTools = () => {
           View All
         </button>
       </div>
-      <div className="flex flex-col xl:flex xl:flex-row gap-10">
+      <div className="flex flex-col xl:flex xl:flex-row xl:justify-center md:grid md:grid-cols-2 md:w-full md:justify-items-center gap-10  ">
         <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px]">
           <div className="rounded-full w-[100px] h-[100px] bg-white flex justify-center items-center text-green-300">
             <img src={tool} alt="" />
@@ -36,7 +36,7 @@ const FeaturedTools = () => {
             <p>Keep track of project deadlines</p>
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px]">
+        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px] md:order-4">
           <div className="rounded-full w-[100px] h-[100px] bg-white flex justify-center items-center">
             <img src={circle} alt="message circle's icon" />
           </div>
@@ -45,7 +45,7 @@ const FeaturedTools = () => {
             <p>Centralized team communication</p>
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px]">
+        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px] md:order-3">
           <div className="rounded-full w-[100px] h-[100px] bg-white flex justify-center items-center">
             <img src={table} alt="table's icon" />
           </div>
