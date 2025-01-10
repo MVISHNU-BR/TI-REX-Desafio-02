@@ -100,7 +100,7 @@ export default function HeaderMenu() {
       )}
 
       {isSearchOpen && (
-        <div className="absolute top-20 right-0 w-full bg-azul-escuro p-5 border border-white border-opacity-10 rounded-[6px] w-full px-2 py-2 flex items-center lg:hidden transition-transform transform">
+        <div className="absolute top-20 right-0 bg-azul-escuro p-5 border border-white border-opacity-10 rounded-[6px] w-full px-2 py-2 flex items-center lg:hidden transition-transform transform">
           <input
             type="text"
             placeholder="Search in site"
