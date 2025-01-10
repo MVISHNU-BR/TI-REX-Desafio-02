@@ -17,14 +17,21 @@ export default function NotFound() {
                     />
                     <div className="w-full h-full flex flex-col justify-center">
                         <h1 className="font-roboto mb-4" style={{ fontSize: "88px" }}>
+                        <h1 className="font-roboto mb-4" style={{fontSize: "88px"}}>
                             404
                         </h1>
                         <p className="text-lg text-black-500 mb-4 word-break" style={{ fontSize: "24px" }}>
+                        <p className="text-lg text-black-500 mb-4" style={{fontSize: "24px"}}>
                             Oops! Nothing to see here, just a lost kanban task.
                         </p>
                         <Link to="/" className="text-blue-500 text-right hover:underline font-semibold">
                             Go back to home 
                         </Link>
+                        <div className="w-full text-right">
+                          <Link to="/" className="text-blue-500 underline font-semibold">
+                          Go back to home 
+                          </Link>
+                        </div>
                     </div>
                 </div>
             </div>
