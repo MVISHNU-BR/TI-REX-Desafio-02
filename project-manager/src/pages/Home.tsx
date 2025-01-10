@@ -52,7 +52,7 @@ function Home() {
             </div>
             <div className="bg-black bg-opacity-70 w-44 h-20 rounded-2xl pl-3 pr-9 py-3 text-white font-medium text-base">
               <p>400+</p>
-              <span>Managed projects</span>
+              <span className="text-nowrap">Managed projects</span>
             </div>
             <div className="bg-black bg-opacity-70 w-44 h-20 rounded-2xl px-3 py-3 text-white font-medium text-base">
               <p>500+</p>

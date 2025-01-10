@@ -1,6 +1,6 @@
 import { SignedIn, SignedOut } from "@clerk/react-router";
 import Dashboard from "../pages/Dashboard";
-import Forbidem from "../pages/Forbidem";
+import Forbiden from "../pages/Forbidden";
 
 export default function ProtectedDashboard() {
   return (
@@ -9,7 +9,7 @@ export default function ProtectedDashboard() {
         <Dashboard />
       </SignedIn>
       <SignedOut>
-        <Forbidem />
+        <Forbiden />
       </SignedOut>
     </>
   );

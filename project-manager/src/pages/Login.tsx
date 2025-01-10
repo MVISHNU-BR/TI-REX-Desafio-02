@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import FormField from "../components/FormField";
 import { useSignIn } from "@clerk/clerk-react";
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -33,8 +34,8 @@ export default function Login() {
   return (
     <>
       <Header />
-      <section>
-        <div className="bg-[url('src/assets/login-bg-phone.png')] bg-no-repeat bg-cover bg-center py-9 px-5 min-h-screen flex items-center justify-center sm:py-36 sm:px-11 lg:bg-none lg:p-0 lg:flex lg:h-full">
+      <section className="h-screen">
+        <div className="bg-[url('src/assets/login-bg-phone.png')] bg-no-repeat bg-cover bg-center py-9 px-5 flex items-center justify-center sm:py-36 sm:px-11 lg:bg-none lg:p-0 lg:flex lg:h-full">
           <div className="hidden lg:block self-stretch max-w-[626px] w-full lg:bg-[url('src/assets/login-desktop.png')] bg-no-repeat bg-cover bg-center"></div>
           <main className="w-full bg-white rounded-3xl py-14 px-3 sm:px-16 lg:pt-11 lg:pb-12 lg:px-32">
             <h1 className="text-center text-vinho text-2xl font-bold mb-6 leading-loose sm:text-left sm:text-4xl">
@@ -93,6 +94,7 @@ export default function Login() {
           </main>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

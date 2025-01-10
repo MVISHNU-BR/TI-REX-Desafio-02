@@ -5,6 +5,7 @@ import { useState } from "react";
 import GoogleLoginButton, {
   FacebookLoginButton,
 } from "../components/SocialLoginButton";
+import Footer from "../components/Footer";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -99,7 +100,7 @@ export default function Register() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button className="mb-5 sm:mb-8" type="submit">
+              <button className="mb-5 sm:mb-8 bg-blue-300" type="submit">
                 Create an account
               </button>
             </form>
@@ -115,6 +116,7 @@ export default function Register() {
           <div className="hidden lg:block self-stretch max-w-[626px] w-full lg:bg-[url('src/assets/register-desktop.png')] bg-no-repeat bg-cover bg-center"></div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
