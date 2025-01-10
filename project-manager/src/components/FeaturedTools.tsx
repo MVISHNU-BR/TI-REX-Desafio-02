@@ -5,17 +5,19 @@ import tool from '../assets/Tool.png';
 
 const FeaturedTools = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-[60px] py-[105px] px-[170px] bg-azul-dessaturado ">
-      <div className="flex flex-col justify-center items-center text-center  gap-6 w-[1100px] h-[168px]">
-        <h1 className="text-[40px] leading-[48px] text-amarelo-claro font-bold">
+    <div className="flex flex-col items-center justify-center gap-[60px] py-[59px] px-[24px] bg-azul-dessaturado ">
+      <div className="flex flex-col justify-center items-center text-center  gap-6 lg:w-[1100px] h-[168px]">
+        <h1 className="md:text-[40px] text-[25px] leading-[48px] text-amarelo-claro font-bold">
           Featured Tools
         </h1>
-        <p className="text-white">Tools to enhance your project management</p>
+        <p className="text-white text-sm md:text-base">
+          Tools to enhance your project management
+        </p>
         <button className="mx-auto text-[15px] bg-white text-roxo w-[205px] rounded-lg h-9 f md:mx-0 md:w-[240px] md:text-base lg:w-[240px] lg:h-12 lg:font-semibold">
           View All
         </button>
       </div>
-      <div className="flex gap-10">
+      <div className="flex flex-col xl:flex xl:flex-row xl:justify-center md:grid md:grid-cols-2 md:w-full md:justify-items-center gap-10  ">
         <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px]">
           <div className="rounded-full w-[100px] h-[100px] bg-white flex justify-center items-center text-green-300">
             <img src={tool} alt="" />
@@ -31,10 +33,10 @@ const FeaturedTools = () => {
           </div>
           <div className="flex flex-col items-center justify-center gap-2 text-center text-white">
             <p className="text-xl leading-7">Deadline Tracker</p>
-            <p className='font-semibold'>Keep track of project deadlines</p>
+            <p>Keep track of project deadlines</p>
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px]">
+        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px] md:order-4">
           <div className="rounded-full w-[100px] h-[100px] bg-white flex justify-center items-center">
             <img src={circle} alt="message circle's icon" />
           </div>
@@ -43,7 +45,7 @@ const FeaturedTools = () => {
             <p>Centralized team communication</p>
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px]">
+        <div className="flex justify-center items-center flex-col gap-5 w-[245px] h-[204px] md:order-3">
           <div className="rounded-full w-[100px] h-[100px] bg-white flex justify-center items-center">
             <img src={table} alt="table's icon" />
           </div>
