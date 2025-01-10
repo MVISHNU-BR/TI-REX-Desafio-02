@@ -23,7 +23,8 @@ export default {
         'vermelho': '#BD2323',
         'branco': '#FFFFFF',
         'azul-hover': '#268FE4',
-        
+        'roxo-create': '#5570F1',
+        'laranja-create': '#F59E0B',
 
       },
     },

@@ -10,3 +10,12 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
