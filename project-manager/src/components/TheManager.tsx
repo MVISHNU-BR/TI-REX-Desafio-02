@@ -6,7 +6,7 @@ const TheManager = () => {
   return (
     <div className="bg-azul-escuro text-white py-[60px] px-[20.5px] flex flex-col gap-[49px] xl:flex xl:flex-col items-center overflow-hidden">
       <div
-        className="md:w-[656px] md:h-[216px] md:mx-auto xl:w-[1100px] xl:h-[192px] xl:flex xl:flex-col xl:gap-6 xl:mx-[170px]
+        className="h-[252px] flex flex-col gap-6 md:w-[656px] md:h-[216px] md:mx-auto xl:w-[1100px] xl:h-[192px] xl:flex xl:flex-col xl:gap-6 xl:mx-[170px]
       "
       >
         <h1 className="text-2xl leading-[48px] text-amarelo-claro md:text-[40px]">
