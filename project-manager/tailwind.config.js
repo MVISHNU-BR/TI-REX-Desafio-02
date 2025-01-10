@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       colors: {
         'azul-escuro': '#1E293B',
         'azul-claro': '#92BBFF',
@@ -25,6 +28,7 @@ export default {
         'azul-hover': '#268FE4',
         'roxo-create': '#5570F1',
         'laranja-create': '#F59E0B',
+        'cinza-create': '#4B5563',
 
       },
     },
