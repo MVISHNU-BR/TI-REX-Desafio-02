@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router";
 
-
 export default function NotFound() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -35,4 +34,3 @@ export default function NotFound() {
     </div>
   );
 }
-
