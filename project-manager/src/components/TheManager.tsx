@@ -1,6 +1,4 @@
-import img2 from '../assets/carrossel-1.png';
-import img3 from '../assets/carrossel-2.png';
-import img1 from '../assets/carrossel-3.png';
+
 import CaroulselImages from './CaroulselImages';
 
 const TheManager = () => {

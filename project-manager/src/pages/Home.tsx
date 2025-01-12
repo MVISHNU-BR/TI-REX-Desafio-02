@@ -1,36 +1,26 @@
-// import Footer from '../components/Footer';
-// import Header from '../components/Header';
-// import homeBanner from '../assets/homeBanner.jpg';
-// import person from '../assets/homePerson.png';
-// import FeaturedTools from '../components/FeaturedTools';
-// import TheManager from '../components/TheManager';
-// import { useClerk } from '@clerk/react-router';
-// import { useEffect } from 'react';
-// import LinkButton from '../components/LinkButton';
-// import Button from '../components/Button';
-// import CaroulselImages from '../components/CaroulselImages';
-import { useState } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import homeBanner from "../assets/homeBanner.jpg";
-import person from "../assets/homePerson.png";
-import FeaturedTools from "../components/FeaturedTools";
-import TheManager from "../components/TheManager";
-import { useClerk } from "@clerk/react-router";
-import { useEffect } from "react";
-import LinkButton from "../components/LinkButton";
-import checkIcon from "../assets/checkIcon.png";
-import FormField from "../components/FormField";
+import { useState } from 'react';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import homeBanner from '../assets/homeBanner.jpg';
+import person from '../assets/homePerson.png';
+import FeaturedTools from '../components/FeaturedTools';
+import TheManager from '../components/TheManager';
+import { useClerk } from '@clerk/react-router';
+import { useEffect } from 'react';
+import LinkButton from '../components/LinkButton';
+import checkIcon from '../assets/checkIcon.png';
+import FormField from '../components/FormField';
+import CaroulselImages from '../components/CaroulselImages';
 
 function Home() {
   const { signOut } = useClerk();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const emailRegex = new RegExp(/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/);
   const nameRegex = /^[A-Za-z]{3,}$/;
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [error, setError] = useState("");
-  const [errorName, setErrorName] = useState("");
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
+  const [errorName, setErrorName] = useState('');
 
   useEffect(() => {
     signOut({
@@ -40,20 +30,20 @@ function Home() {
 
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrorName("");
-    setError("");
+    setErrorName('');
+    setError('');
     if (!emailRegex.test(email)) {
-      setError("E-mail format invalid. Please insert a corret e-mail");
+      setError('E-mail format invalid. Please insert a corret e-mail');
     }
     if (!nameRegex.test(name)) {
       setErrorName(
-        "Invalid name please enter a name with more than 2 characters and no numbers"
+        'Invalid name please enter a name with more than 2 characters and no numbers'
       );
     }
     if (nameRegex.test(name) && emailRegex.test(email)) {
       setIsModalOpen(true);
-      setEmail("");
-      setName("");
+      setEmail('');
+      setName('');
     }
   };
   return (
@@ -136,7 +126,7 @@ function Home() {
                   ? error && (
                       <span className="text-red-500 text-sm mb-4">{error}</span>
                     )
-                  : "We promise not to spam"}
+                  : 'We promise not to spam'}
               </p>
             </div>
             <div>
