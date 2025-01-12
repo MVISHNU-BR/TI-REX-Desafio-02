@@ -66,8 +66,8 @@ function Home() {
             />
           </div>
         </section>
-        {/* <TheManager /> */}
-        {/* <FeaturedTools /> */}
+        <TheManager />
+        <FeaturedTools />
         <section className="container m-auto min-h-[510px] w-full flex flex-col items-center gap-16 bg-white py-12 xl:h-[549px] xl:flex-row xl:justify-center xl:gap-16">
           <div className="flex flex-col items-center justify-center h-[96px] px-5 gap-6 xl:w-[520px] xl:px-0 xl:items-start">
             <h3 className="text-azul-escuro text-[25px] sm:text-4xl font-bold">
