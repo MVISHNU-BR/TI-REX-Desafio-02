@@ -28,17 +28,20 @@ export default function Register() {
       await signUp.create({
         firstName,
         lastName,
+        username: firstName + lastName,
         emailAddress: email,
         password,
       });
-      setSuccessMessage("Conta criada com sucesso! Verifique seu email.");
-      setInterval(() => {
+      setSuccessMessage("Account created successfully! Check your email.");
+      setTimeout(() => {
         window.location.href = "/dashboard";
       }, 3000);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      console.error("Erro no registro: ", err);
-      setError(err.errors ? err.errors[0]?.message : "Erro ao criar conta.");
+      console.error("Erro on register: ", err);
+      setError(
+        err.errors ? err.errors[0]?.message : "error on create account."
+      );
     }
   };
 
