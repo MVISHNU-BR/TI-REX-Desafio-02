@@ -15,6 +15,7 @@ export default {
         'amarelo-claro': '#FCF4B6',
         'roxo': '#160A60',
         'roxo-claro': '#4F46E5',
+        'roxo-transparente': '#D3D0F8',
         'vinho': '#331436',
         'cinza-1': '#94A3B8',
         'cinza-2': '#E2E8F0',
@@ -23,8 +24,7 @@ export default {
         'vermelho': '#BD2323',
         'branco': '#FFFFFF',
         'azul-hover': '#268FE4',
-        
-
+        'preto-50': '#00000080',
       },
     },
   },

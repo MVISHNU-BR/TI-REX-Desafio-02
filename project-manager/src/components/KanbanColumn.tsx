@@ -1,0 +1,23 @@
+import { KanbanColumnProps, columnColors } from "../types/KanbanColumnType"
+
+const KanbanColumn: React.FC<KanbanColumnProps> = ({ type }) => {
+  const classes = columnColors[type];
+  const cards = [1];
+
+  return (
+    <>
+      <div id="column" className="w-[110px] max-w[110px] h-[196px] max-h-[196px] bg-cinza-2 rounded-2xl">
+        <div id="column-top" className={`w-full h-auto bg-${classes.background} rounded-2xl flex justify-between items-center py-[2px] pl-[3px] pr-[5px]`}>
+            <h1 className={`text-[6px] flex items-baseline text-${classes.text} font-bold`}>
+              <span className={`text-white font-semibold bg-${classes.text} mr-[2px] px-1 pt-[2px] rounded-xl flex items-center justify-center`}>{cards.length}</span>
+              {classes.title}
+            </h1>
+            <svg className={`fill-${classes.text}`} width="9" height="10"><path d="M7.523 5a.396.396 0 0 1-.396.396H4.62v2.508a.396.396 0 1 1-.791 0V5.396H1.32a.396.396 0 0 1 0-.792h2.508V2.096a.396.396 0 0 1 .791 0v2.508h2.508A.396.396 0 0 1 7.523 5Z"/></svg>
+        </div>
+
+      </div>
+    </>
+  )
+}
+
+export default KanbanColumn;
