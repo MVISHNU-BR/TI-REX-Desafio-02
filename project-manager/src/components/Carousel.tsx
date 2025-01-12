@@ -11,6 +11,7 @@ const Carousel: React.FC<CarouselProps> = ({ children: slides }) => {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      setCurr(0);
     };
 
     window.addEventListener('resize', handleResize);
