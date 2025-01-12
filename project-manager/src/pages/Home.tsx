@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import homeBanner from "../assets/homeBanner.jpg";
@@ -7,16 +8,23 @@ import TheManager from "../components/TheManager";
 import { useClerk } from "@clerk/react-router";
 import { useEffect } from "react";
 import LinkButton from "../components/LinkButton";
-import Button from "../components/Button";
+import checkIcon from "../assets/checkIcon.png";
+import FormField from "../components/FormField";
 
 function Home() {
   const { signOut } = useClerk();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     signOut({
       redirectUrl: "/",
     });
   }, [signOut]);
 
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
   return (
     <>
       <div className="xl:absolute w-full">
@@ -69,6 +77,62 @@ function Home() {
         </section>
         <TheManager />
         <FeaturedTools />
+        <section className="container m-auto min-h-[510px] w-full flex flex-col items-center gap-16 bg-white py-12 xl:h-[549px] xl:flex-row xl:justify-center xl:gap-16">
+          <div className="flex flex-col items-center justify-center h-[96px] px-5 gap-6 xl:w-[520px] xl:px-0 xl:items-start">
+            <h3 className="text-azul-escuro text-[25px] sm:text-4xl font-bold">
+              Subscribe to Updates
+            </h3>
+            <p className="text-azul-escuro text-sm sm:text-base font-normal">
+              Stay informed with out latest updates
+            </p>
+          </div>
+          <form
+            onSubmit={handleSubscribe}
+            className="w-full min-h-[256px] sm:w-[404px] px-5 flex flex-col gap-10 xl:px-0 xl:w-[520px]"
+          >
+            <div>
+              <FormField
+                htmlFor="email"
+                inputType="email"
+                labelText="Email"
+                placeholder="Enter your email"
+                className="mb-2"
+              />
+              <p className="text-slate-500">We promise not to spam</p>
+            </div>
+            <FormField
+              htmlFor="Name"
+              inputType="text"
+              labelText="Name"
+              placeholder="Enter your Name"
+              className="mb-6"
+            />
+            <button className="bg-azul-escuro text-white py-2 px-9 sm:px-20 self-center rounded-lg hover:bg-azul-hover2 xl:self-start">
+              Subscribe
+            </button>
+          </form>
+        </section>
+        {isModalOpen && (
+          <div className="absolute bg-black bg-opacity-50">
+            <div className="h-64 w-60 bg-white rounded-lg absolute flex flex-col items-center justify-center px-4 gap-4">
+              <img src={checkIcon} alt="" width={45} height={45} />
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="text-red-500 font-bold text-xl self-end absolute top-1 right-4"
+              >
+                x
+              </button>
+              <h1>Success</h1>
+              <p>check your email for more details!</p>
+              <button
+                className="bg-green-500 hover:bg-green-600 rounded-full px-12 py-1"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Ok
+              </button>
+            </div>
+          </div>
+        )}
         <Footer />
       </main>
     </>
