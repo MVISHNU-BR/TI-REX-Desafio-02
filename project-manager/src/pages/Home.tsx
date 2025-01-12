@@ -14,6 +14,12 @@ import FormField from "../components/FormField";
 function Home() {
   const { signOut } = useClerk();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const emailRegex = new RegExp(/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/);
+  const nameRegex = /^[A-Za-z]{3,}$/;
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
+  const [errorName, setErrorName] = useState("");
 
   useEffect(() => {
     signOut({
@@ -23,7 +29,21 @@ function Home() {
 
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsModalOpen(true);
+    setErrorName("");
+    setError("");
+    if (!emailRegex.test(email)) {
+      setError("E-mail format invalid. Please insert a corret e-mail");
+    }
+    if (!nameRegex.test(name)) {
+      setErrorName(
+        "Invalid name please enter a name with more than 2 characters and no numbers"
+      );
+    }
+    if (nameRegex.test(name) && emailRegex.test(email)) {
+      setIsModalOpen(true);
+      setEmail("");
+      setName("");
+    }
   };
   return (
     <>
@@ -97,42 +117,59 @@ function Home() {
                 labelText="Email"
                 placeholder="Enter your email"
                 className="mb-2"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <p className="text-slate-500">We promise not to spam</p>
+              <p className="text-slate-500">
+                {error
+                  ? error && (
+                      <span className="text-red-500 text-sm mb-4">{error}</span>
+                    )
+                  : "We promise not to spam"}
+              </p>
             </div>
-            <FormField
-              htmlFor="Name"
-              inputType="text"
-              labelText="Name"
-              placeholder="Enter your Name"
-              className="mb-6"
-            />
+            <div>
+              <FormField
+                htmlFor="Name"
+                inputType="text"
+                labelText="Name"
+                placeholder="Enter your Name"
+                className="mb-2"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              {errorName && (
+                <span className="text-red-500 text-sm">{errorName}</span>
+              )}
+            </div>
             <button className="bg-azul-escuro text-white py-2 px-9 sm:px-20 self-center rounded-lg hover:bg-azul-hover2 xl:self-start">
               Subscribe
             </button>
           </form>
-        </section>
-        {isModalOpen && (
-          <div className="absolute bg-black bg-opacity-50">
-            <div className="h-64 w-60 bg-white rounded-lg absolute flex flex-col items-center justify-center px-4 gap-4">
-              <img src={checkIcon} alt="" width={45} height={45} />
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="text-red-500 font-bold text-xl self-end absolute top-1 right-4"
-              >
-                x
-              </button>
-              <h1>Success</h1>
-              <p>check your email for more details!</p>
-              <button
-                className="bg-green-500 hover:bg-green-600 rounded-full px-12 py-1"
-                onClick={() => setIsModalOpen(false)}
-              >
-                Ok
-              </button>
+          {isModalOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-3">
+              <div className="h-64 w-60 bg-white rounded-lg flex flex-col items-center justify-center px-4 gap-4 relative">
+                <img src={checkIcon} alt="" width={45} height={45} />
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="text-red-500 font-bold text-xl self-end absolute top-1 right-4"
+                >
+                  x
+                </button>
+                <h1>Success</h1>
+                <p className="text-center">
+                  Thank you for subscribing to our Newsletter
+                </p>
+                <button
+                  className="bg-green-500 hover:bg-green-600 rounded-full px-12 py-1"
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  Ok
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </section>
         <Footer />
       </main>
     </>
