@@ -6,6 +6,7 @@ import GoogleLoginButton, {
   FacebookLoginButton,
 } from "../components/SocialRegisterButton";
 import Footer from "../components/Footer";
+import { postUser } from "../services/User.services";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -14,16 +15,32 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-
   const { signUp, isLoaded } = useSignUp();
+  const postRegister = async (userId?: string) => {
+    const user = {
+      id: userId,
+      firstName: firstName,
+      lastName: lastName,
+      userName: firstName + lastName,
+      datecreated: new Date(),
+      email: email,
+      password: password,
+      role: "",
+      social: {
+        linkedin: "",
+        instagran: "",
+        x: "",
+      },
+    };
+    await postUser(user);
+  };
 
   const handleEmailPasswordRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+
     setSuccessMessage("");
-
     if (!isLoaded) return;
-
     try {
       await signUp.create({
         firstName,
@@ -32,6 +49,16 @@ export default function Register() {
         emailAddress: email,
         password,
       });
+      // Capturar o ID final do usuário
+      const userId = signUp.createdUserId;
+
+      if (!userId) {
+        throw new Error("Erro ao obter o userId do usuário criado.");
+      }
+
+      alert(userId);
+
+      await postRegister(userId);
       setSuccessMessage("Account created successfully! Check your email.");
       setTimeout(() => {
         window.location.href = "/dashboard";

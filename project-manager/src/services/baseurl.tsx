@@ -1,1 +1,0 @@
-export const Baseurl_= "https://faceiroapi-v2.onrender.com"
