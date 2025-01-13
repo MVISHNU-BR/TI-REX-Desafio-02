@@ -14,7 +14,7 @@ export default function Settings() {
       <Header>
         <HeaderMenu></HeaderMenu>
       </Header>
-      <main className="px-5 bg-white-page pt-[183px] sm:pt-[80px] pb-12 ">
+      <main className="px-5 bg-white pt-[183px] sm:pt-[80px] pb-12 ">
         {/* Profile name */}
         <section className="flex flex-col gap-16 items-center sm:gap-7">
           <div className="flex items-center gap-4 sm:self-start">
