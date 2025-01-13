@@ -9,6 +9,8 @@ export default function Kanban() {
       <main className="bg-[url(src/assets/draggable-area.png)] bg-no-repeat bg-contain bg-center min-h-screen flex flex-col items-center gap-[76px] px-5 pt-36 pb-7">
         <div className="columns flex w-full justify-center gap-[6px]">
           <KanbanColumn type="to-do"/>
+          <KanbanColumn type="in-progress"/>
+          <KanbanColumn type="done"/>
         </div>
         <div id="flag" className="bg-preto-50 w-full px-[10px] pb-3 pt-[6px] rounded-2xl">
           <header className="rounded-2xl flex">

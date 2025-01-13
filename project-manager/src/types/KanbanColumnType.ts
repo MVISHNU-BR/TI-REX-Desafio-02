@@ -3,8 +3,8 @@ export interface KanbanColumnProps {
 }
 
 
-export const columnColors: Record<KanbanColumnProps["type"], { background: string; text: string, title: string }> = {
-  "to-do": { background: "roxo-transparente", text: "roxo-claro", title: "To do" },
-  "in-progress": { background: "#ffc107", text: "#000000", title: "In progress" },
-  "done": { background: "#28a745", text: "#ffffff", title: "Done" },
+export const columnColors: Record<KanbanColumnProps["type"], { transparentColor: string; color: string, text: string }> = {
+  "to-do": { transparentColor: "#D3D0F8", color: "#4F46E5", text: "To do" },
+  "in-progress": { transparentColor: "#FCF4B6", color: "#F59E0B", text: "In progress" },
+  "done": { transparentColor: "#C7F0D6", color: "#22C55E", text: "Done" },
 };
