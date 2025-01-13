@@ -1,7 +1,7 @@
 type InputType = "text" | "email" | "password";
 
 export interface FormFieldControl {
-  labelText: string;
+  labelText?: string;
   htmlFor: string;
   inputType: InputType;
   placeholder: string;
