@@ -90,7 +90,7 @@ export default function CreateTask() {
       
       {isModalOpen && (
         <div className="flex items-center justify-center bg-black bg-opacity-50">
-          <div className="w-[491px] h-[1084px] bg-white p-6 rounded-lg shadow-lg relative">
+          <div className="w-[491px] h-[1084px] bg-white p-6 rounded-lg shadow-lg relative md:w-[1001px] md:h-[584px]">
             
             <button
               onClick={() => setIsModalOpen(false)}
@@ -113,7 +113,7 @@ export default function CreateTask() {
                   value={task.title}
                   onChange={handleInputChange}
                   placeholder="Enter task title"
-                  className="w-full border border-[#0000001A] rounded-[6px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                 className="w-full sm:w-[412px] h-[36px] border border-[#0000001A] rounded-[6px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <div className="w-[412px] flex flex-col gap-[8px] ">
@@ -178,7 +178,7 @@ export default function CreateTask() {
                       bg-[url('/src/assets/Calendar.svg')] bg-no-repeat bg-[15px_center] text-center"
                     />
                   </div>
-                  <div className="w-[117px] h-[70px] absolute top-[425px] left-[230px] ">
+                  <div className="w-[117px] h-[70px] absolute top-[421px] left-[230px] ">
                     <input
                       
                       type="Time"
@@ -203,7 +203,7 @@ export default function CreateTask() {
                           bg-[url('/src/assets/Calendar.svg')] bg-no-repeat bg-[15px_center] text-center"
                     />
 
-                    <div className="w-[117px] h-[76px] absolute top-[518px] left-[230px] ">
+                    <div className="w-[117px] h-[76px] absolute top-[511px] left-[230px] ">
                       <img src="" alt="" />
                       <input
                         type="Time"
@@ -221,104 +221,119 @@ export default function CreateTask() {
                 
               </div>
               
-
-              <div className="m">
-                <div className="flex gap-4 mb-3">
-                  <label className="block text-gray-700 font-medium mb-1">Task Cover</label>
-                  <label className="text-gray-700 font-medium mb-1 flex justify-end">optional</label>
-                </div>
-
-                <div className="relative w-[410px] h-[50px] 
-                rounded-[6px] 
-                border border-[#60A5FA] bg-[#EFF6FF] 
-                mb-3 bg-[url('/src/assets/SystemIcons.svg')] bg-no-repeat bg-[15px_center] text-center">
-                  <button
-                    type="button"
-                    className="absolute top-[50%] right-4 transform -translate-y-1/2"
-                    aria-label="Delete Task"
-                  >
-                    <img src="/src/assets/lixeiraIcons.svg" alt="Delete" className="w-[18px] h-[18px]"/>
-                  </button>
-                </div>
-
-                
-                <div className="w-[410px] h-[152px] rounded-[6px] border-2 border-dashed border-[#60A5FA] flex justify-center items-center">
-                  <div className="w-[214px] h-[94px] flex flex-col justify-center items-center text-cinza-create">
-                    <img src="/src/assets/uploadicon.svg" 
-                    className="w-[24px] h-[24px] mb-2" 
-                    alt="Upload" />
-                    <span className="text-center text-[16px] leading-[26px] tracking-[-0.02em] font-inter font-normal">
-                      Drop here to attach or <span className="text-roxo-claro">upload</span>
-                    </span>
-                    <span className="mt-4 text-cin tracking-[-0.02em] font-inter font-normal">Max size: 5GB</span>
+              <div className="relative md:top-[-520px] md:bottom-[622px] md:left-[488px] md:right-[547px]">
+  
+                <div className="flex-1">
+                  <div className="relative md:top-[16px] md:bottom-[622px] md:left-[8px] md:right-[547px]">
+                    <label className="block text-gray-700 font-medium mb-1 lg:">Task Cover</label>
+                    <label className="relative md:top-[3px] lg:bottom-[622px] md:left-[250px] md:right-[547px]">optional</label>
                   </div>
-                </div>
 
+                  <div
+                    className="relative w-[410px] h-[50px] 
+                    rounded-[6px] 
+                    border border-[#60A5FA] bg-[#EFF6FF] 
+                    mb-3 bg-[url('/src/assets/SystemIcons.svg')] bg-no-repeat bg-[15px_center] text-center"
+                    
+                  >
+                    <span className="absolute top-[50%] left-10 transform -translate-y-1/2 font-inter text-lg text-preto leading-6 tracking-[ -0.02em] text-left underline decoration-solid decoration-transparent">imageattachment.jpg</span>
+                    <button
+                      type="button"
+                      className="absolute top-[50%] right-4 transform -translate-y-1/2"
+                      aria-label="Delete Task"
+                    >
+                      <img
+                        src="/src/assets/lixeiraIcons.svg"
+                        alt="Delete"
+                        className="w-[18px] h-[18px]"
+                      />
+                    </button>
+                  </div>
+
+                  <div
+                    className="w-[410px] h-[152px] rounded-[6px] border-2 border-dashed border-[#60A5FA] flex justify-center items-center mb-4"
+                  >
+                    <div className="w-[214px] h-[94px] flex flex-col justify-center items-center text-cinza-create">
+                      <img
+                        src="/src/assets/uploadicon.svg"
+                        className="w-[24px] h-[24px] mb-2"
+                        alt="Upload"
+                      />
+                      <span className="text-center text-[16px] leading-[26px] tracking-[-0.02em] font-inter font-normal">
+                        Drop here to attach or <span className="text-roxo-claro">upload</span>
+                      </span>
+                      <span className="mt-4 text-cin tracking-[-0.02em] font-inter font-normal ">
+                        Max size: 5GB
+                      </span>
+                    </div>
+                  </div>
               </div>
-               
-              <div>
+
+              
+              <div className="flex-1 ">
                 <div>
-                 <label className="block text-gray-700 font-medium mb-1">Add People</label>
+                  <label className="block text-gray-700 font-medium  ">Add People</label>
                 </div>
-                <div >
+                <div>
                   <input
-                
                     type="text"
                     name="addPeople"
                     value={task.addPeople}
                     onChange={handleInputChange}
                     placeholder="John Doe"
-                    className="w-[410px] h-[45px] border border-[#0000001A] rounded-[6px] px-10 py-2 bg-[url('/src/assets/searchh.svg')] bg-no-repeat bg-[left_10px_center]  placeholder:pl-1"
+                    className="w-[410px] h-[45px] border border-[#0000001A] rounded-[6px] px-10 py-2 bg-[url('/src/assets/searchh.svg')] bg-no-repeat bg-[left_10px_center] placeholder:pl-1 mb-3"
                   />
                 </div>
-              </div>
 
-              <div className="w-[412px] flex flex-col gap-[8px]">
-            
-                <label className="block text-gray-700 font-medium">Priority</label>
-                <div className="flex gap-[50px]">
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handlePriorityChange("Low")}
-                    className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
-                      task.priority === "Low" ? "bg-roxo-create" : "bg-gray-300"
-                    }`}
-                  ></button>
-                  <span>Low</span>
-                </div>
+               
+                <div className="w-[412px] flex flex-col gap-[8px] ">
+                  <label className="block text-gray-700 font-medium">Priority</label>
+                  <div className="flex gap-[50px]">
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => handlePriorityChange("Low")}
+                        className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
+                          task.priority === "Low" ? "bg-roxo-create" : "bg-gray-300"
+                        }`}
+                      ></button>
+                      <span>Low</span>
+                    </div>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handlePriorityChange("Mid")}
-                    className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
-                      task.priority === "Mid" ? "bg-laranja-create" : "bg-gray-300"
-                    }`}
-                  ></button>
-                  <span>Mid</span>
-                </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => handlePriorityChange("Mid")}
+                        className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
+                          task.priority === "Mid" ? "bg-laranja-create" : "bg-gray-300"
+                        }`}
+                      ></button>
+                      <span>Mid</span>
+                    </div>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handlePriorityChange("High")}
-                    className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
-                      task.priority === "High" ? "bg-branco" : "bg-gray-300"
-                    }`}
-                  ></button>
-                  <span>High</span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => handlePriorityChange("High")}
+                        className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
+                          task.priority === "High" ? "bg-branco" : "bg-gray-300"
+                        }`}
+                      ></button>
+                      <span>High</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              </div>
-              <div className="text-center">
-                <button
-                  
-                  type="submit"
-                  className="w-[410px] h-[48px] bg-verde text-white font-medium rounded-lg">
-                  Create!
-                </button>
-              </div>
+              <div className="text-center mt-6">
+                  <button
+                    type="submit"
+                    className="w-[410px] h-[48px] bg-verde text-white font-medium rounded-md relative md:top-[3px] md:bottom-[622px] md:left-[-265px] md:right-[547px] "
+                  >
+                    Create!
+                  </button>
+                </div>
+            </div>
+
             </form>
           </div>
         </div>
