@@ -1,12 +1,11 @@
 import { SignedIn, SignedOut } from "@clerk/react-router";
-import Dashboard from "../pages/Dashboard";
 import Forbiden from "../pages/Forbidden";
-
-export default function ProtectedDashboard() {
+import { Outlet } from "react-router";
+export default function ProtectedRoutes() {
   return (
     <>
       <SignedIn>
-        <Dashboard />
+        <Outlet />
       </SignedIn>
       <SignedOut>
         <Forbiden />

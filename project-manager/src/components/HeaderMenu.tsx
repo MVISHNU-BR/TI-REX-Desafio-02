@@ -2,6 +2,7 @@ import { useState } from "react";
 import menuIcon from "../assets/menu.svg";
 import searchIcon from "../assets/ic-search.svg";
 import { useClerk } from "@clerk/clerk-react";
+import { Link } from "react-router";
 
 export default function HeaderMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,24 +36,24 @@ export default function HeaderMenu() {
         >
           Home
         </button>
-        <a
-          href="#about"
+        <Link
+          to="#about"
           className="text-white hover:underline hover:decoration-solid hover:decoration-branco hover:underline-offset-4 transition duration-300"
         >
           About
-        </a>
-        <a
-          href="#settings"
+        </Link>
+        <Link
+          to="/settings"
           className="text-white hover:underline hover:decoration-solid hover:decoration-branco hover:underline-offset-4 transition duration-300"
         >
           Settings
-        </a>
-        <a
-          href="#profile"
+        </Link>
+        <Link
+          to="/profile"
           className="text-white hover:underline hover:decoration-solid hover:decoration-branco hover:underline-offset-4 transition duration-300"
         >
           Profile
-        </a>
+        </Link>
         <div className="border border-white border-opacity-10 rounded-[6px] w-[200px] h-[40px] flex items-center hover:border-azul-hover transition duration-300">
           <input
             type="text"
@@ -84,18 +85,18 @@ export default function HeaderMenu() {
 
       {isMenuOpen && (
         <div className="absolute top-20 right-0 w-full bg-azul-escuro p-5 flex flex-col gap-4  items-center justify-center lg:hidden transition-transform transform">
-          <a href="#home" className="text-white">
+          <Link to="#home" className="text-white">
             Home
-          </a>
-          <a href="#about" className="text-white">
+          </Link>
+          <Link to="#about" className="text-white">
             About
-          </a>
-          <a href="#settings" className="text-white">
+          </Link>
+          <Link to="#settings" className="text-white">
             Settings
-          </a>
-          <a href="#profile" className="text-white">
+          </Link>
+          <Link to="#profile" className="text-white">
             Profile
-          </a>
+          </Link>
         </div>
       )}
 

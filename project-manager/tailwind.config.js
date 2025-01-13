@@ -30,6 +30,7 @@ export default {
         'laranja-create': '#F59E0B',
         'cinza-create': '#4B5563',
         'azul-hover2': '#3B5174',
+        "cinza-input": "#5E6366",
 
       },
     },
