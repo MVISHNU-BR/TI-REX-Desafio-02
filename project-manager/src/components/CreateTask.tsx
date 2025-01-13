@@ -90,7 +90,7 @@ export default function CreateTask() {
       
       {isModalOpen && (
         <div className="flex items-center justify-center bg-black bg-opacity-50">
-          <div className="w-[491px] h-[1084px] bg-white p-6 rounded-lg shadow-lg relative md:w-[1001px] md:h-[584px]">
+          <div className="w-[491px] h-[1084px] bg-white p-6 rounded-lg shadow-lg relative md:w-[1001px] md:h-[584px] ">
             
             <button
               onClick={() => setIsModalOpen(false)}
@@ -119,8 +119,7 @@ export default function CreateTask() {
               <div className="w-[412px] flex flex-col gap-[8px] ">
             
               <label className="block text-gray-700 font-medium">Status</label>
-              <div className="flex gap-[25px] ">
-               
+              <div className="flex gap-[25px]">
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
@@ -132,26 +131,29 @@ export default function CreateTask() {
                   <span>To-Do</span>
                 </div>
 
-                
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={() => handleStatusChange("In Progress")}
-                        className="w-[20px] h-[20px] rounded-[6px] bg-laranja-create border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF]"
-                      ></button>
-                      <span>In Progress</span>
-                    </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => handleStatusChange("In Progress")}
+                    className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
+                      task.status === "In Progress" ? "bg-laranja-create" : "bg-gray-300"
+                    }`}
+                  ></button>
+                  <span>In Progress</span>
+                </div>
 
-               
-                    <div className="flex items-center gap-2 ">
-                      <button
-                        type="button"
-                        onClick={() => handleStatusChange("Done")}
-                        className="w-[20px] h-[20px] rounded-[6px] bg-branco border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] "
-                      ></button>
-                      <span>Done</span>
-                    </div>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => handleStatusChange("Done")}
+                    className={`w-[20px] h-[20px] rounded-[6px] border border-[#00000040] shadow-[inset_0_0_0_1px_#FFFFFF] ${
+                      task.status === "Done" ? " bg-branco " : "bg-gray-300"
+                    }`}
+                  ></button>
+                  <span>Done</span>
+                </div>
+</div>
+
                 </div>
 
                 <div>
@@ -161,7 +163,7 @@ export default function CreateTask() {
                     value={task.description}
                     onChange={handleInputChange}
                     placeholder="  Enter a description"
-                    className="w-[412px] h-[113px] rounded-[6px] bg-branco border border-border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] resize-none focus:outline-none focus:ring-0"
+                    className="w-[412px] h-[113px] rounded-[6px] bg-branco border border-border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   ></textarea>
                 </div>
 
@@ -175,7 +177,7 @@ export default function CreateTask() {
                       value={task.startDate}
                       onChange={handleInputChange}
                       className="w-[185px] h-[52px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px] text-[#00000080] 
-                      bg-[url('/src/assets/Calendar.svg')] bg-no-repeat bg-[15px_center] text-center"
+                      bg-[url('/src/assets/Calendar.svg')] bg-no-repeat bg-[15px_center] text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                   <div className="w-[117px] h-[70px] absolute top-[421px] left-[230px] ">
@@ -185,7 +187,7 @@ export default function CreateTask() {
                       name="startTime"
                       value={task.startTime}
                       onChange={handleInputChange}
-                      className="w-[107px] h-[52px] p-[8px_16px_8px_16px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px]  text-[#00000080] bg-[url('/src/assets/fi_clock.svg')] bg-no-repeat bg-[17px_center] text-end"
+                      className="w-[107px] h-[52px] p-[8px_16px_8px_16px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px]  text-[#00000080] bg-[url('/src/assets/fi_clock.svg')] bg-no-repeat bg-[17px_center] text-end focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 </div>
@@ -200,7 +202,7 @@ export default function CreateTask() {
                       value={task.endDate}
                       onChange={handleInputChange}
                         className="w-[185px] h-[52px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px]  text-[#00000080] 
-                          bg-[url('/src/assets/Calendar.svg')] bg-no-repeat bg-[15px_center] text-center"
+                          bg-[url('/src/assets/Calendar.svg')] bg-no-repeat bg-[15px_center] text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
 
                     <div className="w-[117px] h-[76px] absolute top-[511px] left-[230px] ">
@@ -210,7 +212,7 @@ export default function CreateTask() {
                         name="endTime"
                         value={task.endTime}
                         onChange={handleInputChange}
-                        className="w-[107px] h-[52px] p-[8px_16px_8px_16px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px] text-[#00000080] bg-[url('/src/assets/fi_clock.svg')] bg-no-repeat bg-[17px_center] text-end"
+                        className="w-[107px] h-[52px] p-[8px_16px_8px_16px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px] text-[#00000080] bg-[url('/src/assets/fi_clock.svg')] bg-no-repeat bg-[17px_center] text-end focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                       
                     </div>
@@ -221,17 +223,19 @@ export default function CreateTask() {
                 
               </div>
               
-              <div className="relative md:top-[-520px] md:bottom-[622px] md:left-[488px] md:right-[547px]">
+              <div className="relative sm:top-0 md:top-[-520px] md:left-[488px] md:right-[547px] ">
   
-                <div className="flex-1">
-                  <div className="relative md:top-[16px] md:bottom-[622px] md:left-[8px] md:right-[547px]">
-                    <label className="block text-gray-700 font-medium mb-1 lg:">Task Cover</label>
-                    <label className="relative md:top-[3px] lg:bottom-[622px] md:left-[250px] md:right-[547px]">optional</label>
-                  </div>
+                  <div >
+                    <div className="flex flex-col">
+                      <label className="block text-gray-700 font-medium mb-1">Task Cover</label>
+                    </div>
+                    <div className="flex items-center">
+                      <label className="block text-roxo-claro font-medium mb-1 absolute top-[2px] left-[350px] ">optional</label>
+                    </div>
 
                   <div
                     className="relative w-[410px] h-[50px] 
-                    rounded-[6px] 
+                    rounded-[6px]  md:
                     border border-[#60A5FA] bg-[#EFF6FF] 
                     mb-3 bg-[url('/src/assets/SystemIcons.svg')] bg-no-repeat bg-[15px_center] text-center"
                     
@@ -281,7 +285,7 @@ export default function CreateTask() {
                     value={task.addPeople}
                     onChange={handleInputChange}
                     placeholder="John Doe"
-                    className="w-[410px] h-[45px] border border-[#0000001A] rounded-[6px] px-10 py-2 bg-[url('/src/assets/searchh.svg')] bg-no-repeat bg-[left_10px_center] placeholder:pl-1 mb-3"
+                    className="w-[410px] h-[45px] border border-[#0000001A] rounded-[6px] px-10 py-2 bg-[url('/src/assets/searchh.svg')] bg-no-repeat bg-[left_10px_center] placeholder:pl-1 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -327,7 +331,7 @@ export default function CreateTask() {
               <div className="text-center mt-6">
                   <button
                     type="submit"
-                    className="w-[410px] h-[48px] bg-verde text-white font-medium rounded-md relative md:top-[3px] md:bottom-[622px] md:left-[-265px] md:right-[547px] "
+                     className="w-[410px] h-[48px] bg-verde text-white font-medium rounded-md relative md:top-[3px] md:bottom-[622px] md:left-[-265px] md:right-[547px] hover:scale-105 transition-transform duration-200"
                   >
                     Create!
                   </button>
