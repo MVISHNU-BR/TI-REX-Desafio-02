@@ -31,7 +31,8 @@ export default {
         'cinza-create': '#4B5563',
         'azul-hover2': '#3B5174',
         "cinza-input": "#5E6366",
-
+        "roxo-drop": "#60A5FA",
+        "white-page": "#F5F5F5",
       },
     },
   },
