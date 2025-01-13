@@ -85,16 +85,16 @@ export default function HeaderMenu() {
 
       {isMenuOpen && (
         <div className="absolute top-20 right-0 w-full bg-azul-escuro p-5 flex flex-col gap-4  items-center justify-center lg:hidden transition-transform transform">
-          <Link to="#home" className="text-white">
+          <Link to="/home" className="text-white">
             Home
           </Link>
-          <Link to="#about" className="text-white">
+          <Link to="/about" className="text-white">
             About
           </Link>
-          <Link to="#settings" className="text-white">
+          <Link to="/settings" className="text-white">
             Settings
           </Link>
-          <Link to="#profile" className="text-white">
+          <Link to="/profile" className="text-white">
             Profile
           </Link>
         </div>
