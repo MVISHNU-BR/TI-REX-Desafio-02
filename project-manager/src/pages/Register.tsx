@@ -130,7 +130,7 @@ export default function Register() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button className="mb-5 sm:mb-8 bg-blue-300" type="submit">
+              <button className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4" type="submit">
                 Create an account
               </button>
             </form>
