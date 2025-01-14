@@ -1,9 +1,6 @@
-/ @type {import('tailwindcss').Config} */
+/ @type {import('tailwindcss').Config} */;
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -14,28 +11,32 @@ export default {
         'azul-claro': '#92BBFF',
         'azul-dessaturado': '#5C5A79',
         'vinho-transparente': '#23081C',
-        'amarelo': '#F59E0B',
-        'amarelo-claro': '#FCF4B6',
-        'roxo': '#160A60',
+        amarelo: '#F59E0B',
+        'amarelo-transparente': '#FCF4B6',
+        roxo: '#160A60',
         'roxo-claro': '#4F46E5',
-        'vinho': '#331436',
+        'roxo-transparente': '#D3D0F8',
+        vinho: '#331436',
         'cinza-1': '#94A3B8',
-        'cinza-2': '#E2E8F0',
         'cinza-3': '#BFBFBF',
-        'verde': '#22C55E',
-        'verde-claro': '#C7F0D6',
-        'vermelho': '#BD2323',
-        'branco': '#FFFFFF',
+        'cinza-2': 'rgba(30,41,59, 10%)',
+        'cinza-4': '#E2E8F0',
+        'cinza-5': '#475569',
+        verde: '#22C55E',
+        'verde-transparente': '#C7F0D6',
+        vermelho: '#BD2323',
+        branco: '#FFFFFF',
         'azul-hover': '#268FE4',
         'roxo-create': '#5570F1',
         'laranja-create': '#F59E0B',
         'cinza-create': '#4B5563',
         'azul-hover2': '#3B5174',
-        "cinza-input": "#5E6366",
-        "roxo-drop": "#60A5FA",
-        "white-page": "#F5F5F5",
+        'cinza-input': '#5E6366',
+        'roxo-drop': '#60A5FA',
+        'white-page': '#F5F5F5',
+        'preto-50': '#00000080',
       },
     },
   },
   plugins: [],
-}
+};

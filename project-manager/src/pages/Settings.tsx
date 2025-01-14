@@ -17,14 +17,14 @@ export default function Settings() {
       <main className="px-5 bg-white pt-[183px] sm:pt-[80px] pb-12 ">
         {/* Profile name */}
         <section className="flex flex-col gap-16 items-center sm:gap-7">
-          <div className="flex items-center gap-4 sm:self-start">
+          <div className="flex items-center gap-3 sm:self-start">
             <img
               src={user?.imageUrl || userImage}
               alt="Profile image"
               className="rounded-full shadow-xl w-[119px] h-[119px] sm:w-[174px] sm:h-[181px]"
             />
-            <div className="">
-              <h1 className="font-medium text-4xl mb-1 sm:text-5xl">
+            <div className="min-w-[218px] break-words">
+              <h1 className="font-medium text-[35px] sm:text-5xl">
                 {user?.fullName || "Usuário"}
               </h1>
               <p className="font-normal text-xl opacity-70 sm:text-[28px]">
@@ -233,7 +233,7 @@ export default function Settings() {
             </p>
           </div>
 
-          <form className="flex flex-col lg:py-8  lg:w-[637px]">
+          <form className="flex flex-col items-center sm:items-start lg:py-8  lg:w-[637px]">
             <div className="flex items-center gap-1">
               <FormField
                 htmlFor="twitter/X"

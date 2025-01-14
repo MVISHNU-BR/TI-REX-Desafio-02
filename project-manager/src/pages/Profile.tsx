@@ -1,8 +1,8 @@
-import Header from '../components/Header';
-import HeaderMenu from '../components/HeaderMenu';
-import { useUser } from '@clerk/clerk-react';
-import userImage from '../assets/profile-picture-1.jpg';
-import Footer from '../components/Footer';
+import Header from "../components/Header";
+import HeaderMenu from "../components/HeaderMenu";
+import { useUser } from "@clerk/clerk-react";
+import userImage from "../assets/profile-picture-1.jpg";
+import Footer from "../components/Footer";
 
 export default function Profile() {
   const { user } = useUser();
