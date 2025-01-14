@@ -3,9 +3,22 @@ import HeaderMenu from "../components/HeaderMenu";
 import { useUser } from "@clerk/clerk-react";
 import userImage from "../assets/profile-picture-1.jpg";
 import Footer from "../components/Footer";
+import { useEffect } from "react";
 
 export default function Profile() {
   const { user } = useUser();
+  const userName =
+    `${user?.firstName ?? ""}${user?.lastName ?? ""}` || "userName";
+  const setUsername = async () => {
+    await user?.update({
+      username: userName || undefined,
+    });
+  };
+
+  useEffect(() => {
+    setUsername();
+  });
+
   return (
     <>
       <Header>
@@ -93,9 +106,7 @@ export default function Profile() {
                 </strong>
               </p>
               <p className="font-normal text-sm opacity-70 sm:text-base">
-                {Array.isArray(user?.emailAddresses)
-                  ? user.emailAddresses.map((email) => email.emailAddress)
-                  : "Endereço de e-mail"}
+                {user?.id || "User ID"}
               </p>
             </div>
             <div className="flex">
@@ -104,7 +115,11 @@ export default function Profile() {
                   Creation date
                 </strong>
               </p>
-              <p className="font-normal text-sm opacity-70 sm:text-base">@</p>
+              <p className="font-normal text-sm opacity-70 sm:text-base">
+                {user?.createdAt
+                  ? user.createdAt.toString()
+                  : "Data de criação"}
+              </p>
             </div>
             <div className="flex">
               <p className="w-[109px]">
