@@ -1,8 +1,8 @@
-import Header from '../components/Header';
-import HeaderMenu from '../components/HeaderMenu';
-import { useUser } from '@clerk/clerk-react';
-import userImage from '../assets/profile-picture-1.jpg';
-import Footer from '../components/Footer';
+import Header from "../components/Header";
+import HeaderMenu from "../components/HeaderMenu";
+import { useUser } from "@clerk/clerk-react";
+import userImage from "../assets/profile-picture-1.jpg";
+import Footer from "../components/Footer";
 
 export default function Profile() {
   const { user } = useUser();
@@ -20,19 +20,19 @@ export default function Profile() {
                 alt=""
                 className="rounded-lg shadow-md w-[126px] h-[130.95px] sm:w-[174px] sm:h-[181px]"
               />
-              <div className="text-wrap">
+              <div className="min-w-[218px] break-words">
                 <h1 className="font-medium text-4xl mb-1 sm:text-5xl">
-                  {user?.fullName || 'Usuário'}
+                  {user?.fullName || "Usuário"}
                 </h1>
                 <p className="font-normal text-xl opacity-70 sm:text-3xl">
-                  @{user?.username || 'Usuário'}
+                  @{user?.username || "Usuário"}
                 </p>
               </div>
             </div>
             <div className="flex flex-col pb-[19px] self-start">
               <h2 className="font-medium text-2xl">Profile data</h2>
               <p className="font-normal text-sm opacity-70 sm:text-base">
-                {user?.fullName || 'Usuário'}'s information
+                {user?.fullName || "Usuário"}'s information
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function Profile() {
               <p className="font-normal text-sm opacity-70 sm:text-base">
                 {Array.isArray(user?.emailAddresses)
                   ? user.emailAddresses.map((email) => email.emailAddress)
-                  : 'Endereço de e-mail'}
+                  : "Endereço de e-mail"}
               </p>
             </div>
             <div className="flex">
@@ -95,7 +95,7 @@ export default function Profile() {
               <p className="font-normal text-sm opacity-70 sm:text-base">
                 {Array.isArray(user?.emailAddresses)
                   ? user.emailAddresses.map((email) => email.emailAddress)
-                  : 'Endereço de e-mail'}
+                  : "Endereço de e-mail"}
               </p>
             </div>
             <div className="flex">
@@ -133,7 +133,7 @@ export default function Profile() {
             <p>
               <strong>
                 {user?.firstName} {user?.lastName}
-              </strong>{' '}
+              </strong>{" "}
               marked task as done
               <strong> on{}</strong>
             </p>
