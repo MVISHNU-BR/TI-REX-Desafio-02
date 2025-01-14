@@ -1,0 +1,20 @@
+/* Esse arquivo existe para controlar a scrollbar das colunas do kanban, pois o tailwind não tem classes utilitárias para isso */
+
+#column-body {
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+#column-body::-webkit-scrollbar {
+  width: 3px;
+}
+
+#column-body::-webkit-scrollbar-track {
+  background: transparent;
+  margin-right: 2px;
+}
+
+#column-body::-webkit-scrollbar-thumb {
+  background-color: #d5dbe0;
+  border-radius: 10000px;
+}
