@@ -184,7 +184,7 @@ export default function CreateTask() {
                 </div>
 
                
-                <div className="flex flex-col space-y-4" >
+                <div className="flex flex-col space-y-3" >
                     <label className="block text-gray-700 font-medium">
                       Start Date
                     </label>  
@@ -212,11 +212,11 @@ export default function CreateTask() {
                   </div>
                 </div>
                 
-                <div className="flex flex-col space-y-4" >
+                <div className="flex flex-col space-y-3 " >
                     <label className="block text-gray-700 font-medium">
                       Start Date
                     </label>  
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 ">
                     
                     <input
                       type="date"
