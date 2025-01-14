@@ -11,10 +11,10 @@ export default function Profile() {
       <Header>
         <HeaderMenu></HeaderMenu>
       </Header>
-      <main className="px-5">
+      <main className="mx-5 sm:mx-14">
         <section className="bg-cinza-2 opacity-90 rounded-lg my-[47px] pl-4 pr-[14px]">
-          <div className=" flex flex-col items-center sm:mt-[80px] sm:gap-7 pt-14 ">
-            <div className="flex gap-3">
+          <div className=" flex flex-col sm:mt-[80px] gap-[77px] sm:gap-7 pt-14 ">
+            <div className="flex gap-3 sm:gap-6 items-center">
               <img
                 src={user?.imageUrl || userImage}
                 alt=""
@@ -29,7 +29,7 @@ export default function Profile() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col pt-[77px] pb-[19px] self-start">
+            <div className="flex flex-col pb-[19px] self-start">
               <h2 className="font-medium text-2xl">Profile data</h2>
               <p className="font-normal text-sm opacity-70 sm:text-base">
                 {user?.fullName || 'Usuário'}'s information
@@ -37,9 +37,8 @@ export default function Profile() {
             </div>
           </div>
           <div className="border border-black m-auto mt-5 mb-3 opacity-25"></div>
-
+          <h2 className="font-medium text-2xl pb-4">Contact</h2>
           <div className="flex flex-col gap-2">
-            <h1 className="font-medium text-2xl">Contact</h1>
             <div className="flex">
               <p className="bold w-[109px]">
                 <strong className="text-sm opacity-70 sm:text-base">
@@ -83,8 +82,10 @@ export default function Profile() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-2 pt-11">
-            <h2 className="font-medium text-[24px] leading-9">Details</h2>
+          <h2 className="font-medium text-[24px] leading-9 pt-11 pb-4">
+            Details
+          </h2>
+          <div className="flex flex-col gap-2">
             <div className="flex">
               <p className="bold w-[109px]">
                 <strong className="text-sm opacity-70 sm:text-base">
@@ -134,22 +135,28 @@ export default function Profile() {
                 {user?.firstName} {user?.lastName}
               </strong>{' '}
               marked task as done
-              <strong>on {}</strong>
+              <strong> on{}</strong>
             </p>
           </div>
           <div className="pt-[73px] pb-[56px]">
-            <h2 className="font-medium text-[24px] leading-9">Weekly Report</h2>
+            <h2 className="font-medium text-[24px] leading-9 sm:text-[32px]">
+              Weekly Report
+            </h2>
             <p className="font-normal text-sm opacity-70 sm:text-base">
               Tasks estimate
             </p>
             <div className="flex flex-col pt-[14px]">
-              <div className="flex justify-between">
-                <p className="">Total tasks assigned</p>
-                <p>30</p>
+              <div className="flex">
+                <p className="w-[243px] text-xl font-medium">
+                  Total tasks assigned
+                </p>
+                <p className="text-xl font-bold text-blue-700">30</p>
               </div>
-              <div className="flex justify-between">
-                <p>Average work time</p>
-                <p>15h 25min</p>
+              <div className="flex">
+                <p className="w-[243px] text-xl font-medium">
+                  Average work time
+                </p>
+                <p className="text-xl font-bold text-blue-700">15h 25min</p>
               </div>
             </div>
           </div>
