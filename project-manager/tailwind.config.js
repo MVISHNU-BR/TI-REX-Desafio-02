@@ -21,6 +21,7 @@ export default {
         'vinho': '#331436',
         'cinza-1': '#94A3B8',
         'cinza-2': '#E2E8F0',
+        'cinza-3': '#BFBFBF',
         'verde': '#22C55E',
         'verde-claro': '#C7F0D6',
         'vermelho': '#BD2323',
