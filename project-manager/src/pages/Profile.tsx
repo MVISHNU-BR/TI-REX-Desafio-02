@@ -54,44 +54,36 @@ export default function Profile() {
             <h2 className="font-medium text-2xl pb-4">Contact</h2>
             <div className="flex flex-col gap-2">
               <div className="flex">
-                <p className="bold w-[109px]">
-                  <strong className="text-sm opacity-70 sm:text-base">
-                    Email
-                  </strong>
+                <p className="w-[109px] font-bold text-sm opacity-50 sm:text-base">
+                  Email
                 </p>
-                <p className="font-normal text-sm opacity-70 sm:text-base">
+                <p className="font-normal text-sm opacity-50 sm:text-base">
                   {Array.isArray(user?.emailAddresses)
                     ? user.emailAddresses.map((email) => email.emailAddress)
                     : 'Endereço de e-mail'}
                 </p>
               </div>
               <div className="flex">
-                <p className="w-[109px]">
-                  <strong className="text-sm opacity-70 sm:text-base">
-                    Twitter/x
-                  </strong>
+                <p className="w-[109px] font-bold text-sm opacity-50 sm:text-base">
+                  Twitter/x
                 </p>
-                <p className="font-normal text-sm opacity-70 sm:text-base">
+                <p className="font-normal text-sm opacity-50 sm:text-base">
                   @{user?.username}
                 </p>
               </div>
               <div className="flex">
-                <p className="w-[109px]">
-                  <strong className="text-sm opacity-70 sm:text-base">
-                    Instagram
-                  </strong>
+                <p className="w-[109px] font-bold text-sm opacity-50 sm:text-base">
+                  Instagram
                 </p>
-                <p className="font-normal text-sm opacity-70 sm:text-base">
+                <p className="font-normal text-sm opacity-50 sm:text-base">
                   @{user?.username}
                 </p>
               </div>
               <div className="flex">
-                <p className="w-[109px]">
-                  <strong className="text-sm opacity-70 sm:text-base">
-                    Linkedin
-                  </strong>
+                <p className="w-[109px] font-bold text-sm opacity-50 sm:text-base">
+                  Linkedin
                 </p>
-                <p className="font-normal text-sm opacity-70 sm:text-base">
+                <p className="font-normal text-sm opacity-50 sm:text-base">
                   @{user?.username}
                 </p>
               </div>
@@ -101,22 +93,18 @@ export default function Profile() {
             </h2>
             <div className="flex flex-col gap-2">
               <div className="flex">
-                <p className="bold w-[109px]">
-                  <strong className="text-sm opacity-70 sm:text-base">
-                    User ID
-                  </strong>
+                <p className="font-bold w-[109px] text-sm opacity-50 sm:text-base">
+                  User ID
                 </p>
-                <p className="font-normal text-sm opacity-70 sm:text-base">
+                <p className="font-normal text-sm opacity-50 sm:text-base">
                   {user?.id || 'User ID'}
                 </p>
               </div>
               <div className="flex">
-                <p className="w-[109px]">
-                  <strong className="text-sm opacity-70 sm:text-base">
-                    Creation date
-                  </strong>
+                <p className="w-[109px] font-bold text-sm opacity-50 sm:text-base">
+                  Creation date
                 </p>
-                <p className="font-normal text-sm opacity-70 sm:text-base">
+                <p className="font-normal text-sm opacity-50 sm:text-base">
                   @
                   {user?.createdAt
                     ? user.createdAt.toString()
@@ -124,12 +112,10 @@ export default function Profile() {
                 </p>
               </div>
               <div className="flex">
-                <p className="w-[109px]">
-                  <strong className="text-sm opacity-70 sm:text-base">
-                    Title
-                  </strong>
+                <p className="w-[109px] font-bold text-sm opacity-50 sm:text-base">
+                  Title
                 </p>
-                <p className="font-normal text-sm opacity-70 sm:text-base">
+                <p className="font-normal text-sm opacity-50 sm:text-base">
                   Project Manager
                 </p>
               </div>
@@ -141,7 +127,7 @@ export default function Profile() {
               <h2 className="font-medium text-[24px] lg:pt-[124px] sm:text-[32px]">
                 Latest activity
               </h2>
-              <p className="font-normal text-sm opacity-70 sm:text-base">
+              <p className="font-normal text-sm opacity-50 sm:text-base">
                 {user?.username}'s last Interactions
               </p>
             </div>
@@ -157,7 +143,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -171,7 +157,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -185,7 +171,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -199,7 +185,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -213,7 +199,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -227,7 +213,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -241,7 +227,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -255,7 +241,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -269,7 +255,7 @@ export default function Profile() {
                     {user?.firstName} {user?.lastName}
                   </strong>{' '}
                   marked task as done
-                  <strong> on{}</strong>
+                  <strong> on Set 25, 2024</strong>
                 </p>
               </div>
             </div>
@@ -277,7 +263,7 @@ export default function Profile() {
               <h2 className="font-medium text-[24px] leading-9 sm:text-[32px]">
                 Weekly Report
               </h2>
-              <p className="font-normal text-sm opacity-70 leading-9 sm:text-base">
+              <p className="font-normal text-sm opacity-50 leading-9 sm:text-base">
                 Tasks estimate
               </p>
               <div className="flex flex-col pt-[14px]">
