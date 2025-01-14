@@ -1,18 +1,27 @@
+import { useRef } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import KanbanCard from "../components/KanbanCard";
 import KanbanColumn from "../components/KanbanColumn";
+import ResponsiveGrid from "../components/ResponsiveGrid";
 
 export default function Kanban() {
+  const cards = [1,2];
+  const parentRef = useRef<HTMLElement | null>(null);
+
   return (
     <>
     <Header />
-      <main className="bg-[url(src/assets/draggable-area.png)] bg-no-repeat bg-contain bg-center min-h-screen flex flex-col items-center gap-[76px] px-5 pt-36 pb-7">
+      <main ref={parentRef} className="relative bg-slate-200 min-h-screen flex flex-col items-center gap-[76px] px-5 pt-36 pb-7">
+         <ResponsiveGrid parentRef={parentRef}/>
         <div className="columns flex w-full justify-center gap-[6px]">
-          <KanbanColumn type="to-do"/>
-          <KanbanColumn type="in-progress"/>
-          <KanbanColumn type="done"/>
+          <KanbanColumn type="to-do">
+          {cards.map( (card, index) => <KanbanCard priority="mid" name="Task 3" progess="0" people={2} comments={987} key={index}/>)}
+          </KanbanColumn>
+          <KanbanColumn type="in-progress"></KanbanColumn>
+          <KanbanColumn type="done"></KanbanColumn>
         </div>
-        <div id="flag" className="bg-preto-50 w-full px-[10px] pb-3 pt-[6px] rounded-2xl">
+        <div id="flag" className="bg-preto-50 w-full px-[10px] pb-3 pt-[6px] rounded-2xl z-10">
           <header className="rounded-2xl flex">
             <img src="src/assets/logo.svg" alt="Project manager logo" className="w-[22px] h-[22px] mr-2" />
             <h1 className="text-white font-bold text-base">Trabalhar no aplicativo</h1>
