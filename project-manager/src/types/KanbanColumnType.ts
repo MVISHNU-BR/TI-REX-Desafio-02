@@ -1,5 +1,6 @@
 export interface KanbanColumnProps {
-  type: "to-do" | "in-progress" | "done"
+  type: "to-do" | "in-progress" | "done",
+  children?: React.ReactNode
 }
 
 export const columnColors: Record<KanbanColumnProps["type"], { backgroundColor: string; color: string, text: string }> = {

@@ -4,14 +4,15 @@ type user = {
 }
 
 export interface KanbanCardProps {
-  priority: "low" | "mid" | "high"
+  priority: "Low" | "Mid" | "High"
   name: string
-  progress: string
-  users: [ user ]
+  progress: number
+  users: user[],
+  img?: string
 }
 
 export const KanbanCardStyles: Record<KanbanCardProps["priority"], { color: string, backgroundColor: string}> = {
-  "low": { color: "#4F46E5", backgroundColor: "#EEF2FF"},
-  "mid": { color: "#F59E0B", backgroundColor: "#FFFBEB"},
-  "high": { color: "#fff", backgroundColor: "#BD2323"}
+  "Low": { color: "#4F46E5", backgroundColor: "#EEF2FF"},
+  "Mid": { color: "#F59E0B", backgroundColor: "#FFFBEB"},
+  "High": { color: "#fff", backgroundColor: "#BD2323"}
 }

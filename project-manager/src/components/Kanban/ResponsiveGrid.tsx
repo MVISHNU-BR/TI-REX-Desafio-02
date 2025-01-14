@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Imagem do Figma estava perdendo qualidade no resize, então criei um grid similar, mas responsivo para servir de plano de fundo da página de Kanban
+// Imagem do Figma estava perdendo qualidade e estragando o design no resize, então criei um grid similar, mas responsivo para servir de plano de fundo da página de Kanban
 
 type ChildProps = {
   parentRef: React.RefObject<HTMLElement>;
@@ -50,7 +50,7 @@ const ResponsiveGrid: React.FC<ChildProps> = ({parentRef}) => {
         display: "grid",
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
         gridTemplateRows: `repeat(${rows}, 1fr)`,
-        gap: "1px",
+        gap: "2px",
         width: "100%",
         height: "100%",
       }}
