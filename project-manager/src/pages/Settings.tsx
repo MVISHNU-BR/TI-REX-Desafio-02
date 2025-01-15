@@ -56,11 +56,16 @@ export default function Settings() {
       },
     };
     try {
-      await user.update({
-        firstName: name,
-        lastName: lastName,
-      });
-
+      if (name !== "") {
+        await user.update({
+          firstName: name,
+        });
+      }
+      if (lastName !== "") {
+        await user.update({
+          lastName: lastName,
+        });
+      }
       const response = await GetUser(user.id);
       if (response === null) {
         await postUser(userData);
