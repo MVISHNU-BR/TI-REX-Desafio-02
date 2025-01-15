@@ -49,11 +49,13 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between ">
           <a href="/privacy" className="hover:underline text-xl font-normal">
             Privacy Policy
           </a>
-          <a href="/terms" className="hover:underline text-xl font-normal">
+        </div>
+        <div className="flex items-center justify-between">
+        <a href="/terms" className="hover:underline text-xl font-normal">
             Terms of Use
           </a>
         </div>
