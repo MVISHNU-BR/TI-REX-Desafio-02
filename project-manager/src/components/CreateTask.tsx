@@ -34,11 +34,27 @@ export default function CreateTask() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+  
+    if (name === "endDate") {
+      
+      const today = new Date().toISOString().split("T")[0];
+  
+      
+      if (value < today) {
+        alert("End Date must be today or a future date.");
+        return;
+      }
+    }
+  
+    if (name === "startDate") {
+      
+    }
+  
     setTask((prev) => ({
       ...prev,
       [name]: value,
     }));
-  };
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,6 +136,10 @@ export default function CreateTask() {
                     id="task"
                     value={task.title}
                     onChange={handleInputChange}
+                    minLength={5}
+                    pattern=".{5,}"
+                    required
+                     title="The title must be at least 5 characters long, including numbers or special characters."
                     placeholder="Enter task title"
                     className="w-full sm:w-[412px] h-[36px] border border-[#0000001A] rounded-[6px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
@@ -175,12 +195,20 @@ export default function CreateTask() {
                   <textarea
                     name="description"
                     value={task.description}
-                    onChange={handleInputChange}
-                    placeholder="  Enter a description"
+                    onChange={(e) => {
+                      if (e.target.value.length <= 300) {
+                        handleInputChange(e);
+                      }
+                    }}
+                    placeholder="Enter a description"
+                    maxLength={300}
                     className="w-[288.13px] h-[113px]
-                     sm:w-[411px] sm:h-[137px] 
+                      sm:w-[411px] sm:h-[137px] 
                       rounded-[6px] bg-branco border border-border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   ></textarea>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {task.description.length}/300 characters
+                  </p>
                 </div>
 
                
@@ -214,7 +242,7 @@ export default function CreateTask() {
                 
                 <div className="flex flex-col space-y-3 " >
                     <label className="block text-gray-700 font-medium">
-                      Start Date
+                      End Date
                     </label>  
                   <div className="flex items-center space-x-4 ">
                     
@@ -223,10 +251,13 @@ export default function CreateTask() {
                       name="endDate"
                       value={task.endDate}
                       onChange={handleInputChange}
+                      required
+                      pattern="\d{4}-\d{2}-\d{2}"
+                      title="The title must be at least 5 characters long, including numbers or special characters."
                       className="w-[185px] h-[52px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px]  text-[#00000080] 
                             bg-[url('/src/assets/Calendar.svg')] bg-no-repeat bg-[15px_center] text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-
+                      
                     <div>
                       
                       <input
@@ -237,6 +268,7 @@ export default function CreateTask() {
                         className="w-[107px] h-[52px] p-[8px_16px_8px_16px] rounded-[8px] border border-[#0000001A] shadow-[inset_0_0_0_1px_#FFFFFF] font-roboto text-[14px] font-normal leading-[16.41px] text-[#00000080] bg-[url('/src/assets/fi_clock.svg')] bg-no-repeat bg-[17px_center] text-end focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
+                    
                   </div>
                 </div>
                 
