@@ -13,7 +13,7 @@ const FeaturedTools = () => {
         <p className="text-white text-sm md:text-base">
           Tools to enhance your project management
         </p>
-        <button className="mx-auto text-[15px] bg-white text-roxo w-[205px] rounded-lg h-9 f md:mx-0 md:w-[240px] md:text-base lg:w-[240px] lg:h-12 lg:font-semibold">
+        <button className="mx-auto text-[15px] bg-white text-roxo w-[205px] rounded-lg h-9 f md:mx-0 md:w-[240px] md:text-base lg:w-[240px] lg:h-12 lg:font-semibold hover:bg-azul-escuro hover:text-white transition duration-200 ease-in-out">
           View All
         </button>
       </div>

@@ -1,4 +1,3 @@
-
 import CaroulselImages from './CaroulselImages';
 
 const TheManager = () => {
@@ -17,7 +16,7 @@ const TheManager = () => {
           and powerful features, you can plan, prioritize, and keep tabs on your
           projects - whether you’re working solo or a with a team
         </p>
-        <button className="mx-auto text-[15px] bg-white text-roxo w-[205px] rounded-lg h-9 f md:mx-0 md:w-[240px] md:text-base lg:w-[240px] lg:h-12 lg:font-semibold">
+        <button className="mx-auto text-[15px] bg-white text-roxo w-[205px] rounded-lg h-9 f md:mx-0 md:w-[240px] md:text-base lg:w-[240px] lg:h-12 lg:font-semibold hover:bg-azul-dessaturado hover:text-white transition duration-200 ease-in-out">
           Learn More
         </button>
       </div>
