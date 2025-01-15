@@ -25,7 +25,7 @@ export default function Profile() {
         <HeaderMenu></HeaderMenu>
       </Header>
       <main className="mx-5 sm:mx-14 lg:mx-[33px]">
-        <section className="bg-[rgba(246,246,246,0.9)] opacity-90 rounded-lg my-[47px] pl-4 pr-[14px] lg:pl-[97px] lg:flex lg:pt-12">
+        <section className="bg-[rgba(246,246,246,0.9)] opacity-90 rounded-lg my-[47px] pl-4 pr-[14px] lg:pl-[97px] lg:flex lg:py-12">
           <div>
             <div className=" flex flex-col sm:mt-[80px] gap-[77px] sm:gap-7 pt-14 lg:mt-0">
               <div className="flex gap-3 sm:gap-6 items-center">
@@ -122,7 +122,7 @@ export default function Profile() {
             </div>
             <div className="border border-cinza-3 m-auto mt-5 mb-3 lg:hidden"></div>
           </div>
-          <div className="lg:border-l lg:border-cinza-3 lg:ml-[21px] lg:pl-4">
+          <div className="lg:border-l lg:border-cinza-3 lg:ml-[21px] lg:pl-4 lg:pb-[86px]">
             <div className="flex flex-col pb-10">
               <h2 className="font-medium text-[24px] lg:pt-[124px] sm:text-[32px]">
                 Latest activity
