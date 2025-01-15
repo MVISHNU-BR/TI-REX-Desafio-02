@@ -12,6 +12,7 @@ export default function Register() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [job, setJob] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -21,9 +22,10 @@ export default function Register() {
       id: userId,
       firstName: firstName,
       lastName: lastName,
-      userName: firstName + lastName,
+      userName: `${firstName}${lastName}`.toLowerCase(),
       datecreated: new Date(),
       email: email,
+      job: job,
       password: password,
       role: "",
       social: {
@@ -45,7 +47,7 @@ export default function Register() {
       await signUp.create({
         firstName,
         lastName,
-        username: firstName + lastName,
+        username: `${firstName}${lastName}`.toLowerCase(),
         emailAddress: email,
         password,
       });
@@ -55,8 +57,6 @@ export default function Register() {
       if (!userId) {
         throw new Error("Erro ao obter o userId do usuário criado.");
       }
-
-      alert(userId);
 
       await postRegister(userId);
       setSuccessMessage("Account created successfully! Check your email.");
@@ -122,6 +122,15 @@ export default function Register() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <FormField
+                htmlFor="job"
+                inputType="text"
+                labelText="Job Position"
+                placeholder="Enter your job position (example: Project Manager)"
+                className="mb-6"
+                value={job}
+                onChange={(e) => setJob(e.target.value)}
+              />
+              <FormField
                 htmlFor="password"
                 inputType="password"
                 labelText="Password"
@@ -130,7 +139,10 @@ export default function Register() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4" type="submit">
+              <button
+                className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4"
+                type="submit"
+              >
                 Create an account
               </button>
             </form>

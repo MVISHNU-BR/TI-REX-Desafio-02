@@ -21,7 +21,7 @@ export default function GoogleLoginButton() {
   return (
     <button
       onClick={() => signInWith()}
-      className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center"
+      className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center hover:border-azul-hover"
     >
       <img src="src/assets/google-logo-colored.svg" alt="Google Logo" />
     </button>
@@ -49,7 +49,7 @@ export function FacebookLoginButton() {
   return (
     <button
       onClick={() => signInWith()}
-      className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center"
+      className="w-28 h-14 rounded-full border border-slate-200 flex items-center justify-center hover:border-azul-hover"
     >
       <img src="src/assets/facebook-logo-colored.svg" alt="Facebook Logo" />
     </button>
