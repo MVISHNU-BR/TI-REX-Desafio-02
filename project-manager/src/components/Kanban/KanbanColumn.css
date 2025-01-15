@@ -18,3 +18,9 @@
   background-color: #d5dbe0;
   border-radius: 10000px;
 }
+
+@media (min-width: 764px) {
+  #column-body::-webkit-scrollbar {
+    width: 6px;
+  }
+}

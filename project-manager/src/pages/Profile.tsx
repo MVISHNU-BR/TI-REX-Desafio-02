@@ -15,6 +15,22 @@ export default function Profile() {
     });
   };
 
+  const formatDate = (date: any) => {
+    if (!date) return 'Data de criação';
+
+    const d = new Date(date);
+
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const year = String(d.getFullYear()).slice(2);
+    const hours = d.getHours();
+    const minutes = String(d.getMinutes()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const hour12 = hours % 12 || 12;
+
+    return `${day}/${month}/${year} ${hour12}:${minutes}${ampm}`;
+  };
+
   useEffect(() => {
     setUsername();
   });
@@ -25,7 +41,7 @@ export default function Profile() {
         <HeaderMenu></HeaderMenu>
       </Header>
       <main className="mx-5 sm:mx-14 lg:mx-[33px]">
-        <section className="bg-[rgba(246,246,246,0.9)] opacity-90 rounded-lg my-[47px] pl-4 pr-[14px] lg:pl-[97px] lg:flex lg:py-12">
+        <section className="bg-[rgba(246,246,246,0.9)] opacity-90 rounded-2xl my-[47px] pl-4 pr-[14px] lg:pl-[97px] lg:flex lg:py-12">
           <div>
             <div className=" flex flex-col sm:mt-[80px] gap-[77px] sm:gap-7 pt-14 lg:mt-0">
               <div className="flex gap-3 sm:gap-6 items-center">
@@ -105,10 +121,7 @@ export default function Profile() {
                   Creation date
                 </p>
                 <p className="font-normal text-sm opacity-50 sm:text-base">
-                  @
-                  {user?.createdAt
-                    ? user.createdAt.toString()
-                    : 'Data de criação'}
+                  {formatDate(user?.createdAt)}
                 </p>
               </div>
               <div className="flex">
@@ -128,7 +141,7 @@ export default function Profile() {
                 Latest activity
               </h2>
               <p className="font-normal text-sm opacity-50 sm:text-base">
-                {user?.username}'s last Interactions
+                {user?.firstName} {user?.lastName}'s last Interactions
               </p>
             </div>
             <div className="flex flex-col gap-8 lg:pl-4">

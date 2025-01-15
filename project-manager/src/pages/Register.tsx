@@ -17,6 +17,8 @@ export default function Register() {
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const { signUp, isLoaded } = useSignUp();
+
+  
   const postRegister = async (userId?: string) => {
     const user = {
       id: userId,
