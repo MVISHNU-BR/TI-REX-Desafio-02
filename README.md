@@ -168,9 +168,8 @@ Time de colaboradores do Squad Umbrella responsáveis desenvolvimento do projeto
 | [<img src="https://media.licdn.com/dms/image/v2/D4D03AQHJ0OCH7pFHUw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684282731866?e=1742428800&v=beta&t=i1iC8d8abyy3Z-HxKRmE-2fyTJJMQFXA1l65K6vp468" width=115><br><sub>Mahavishnu Jneesh Afonso</sub>](https://www.linkedin.com/in/vishnujneesh/) | [<img src="https://media.licdn.com/dms/image/v2/D4D03AQHrzmkq4eC8Jg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718487658410?e=1742428800&v=beta&t=lOyy9CJ8Eudzwp12S2Y7UHxwqXCSDp1C5spdx1Xm6DE" width=115><br><sub>Renan Casaes</sub>](https://www.linkedin.com/in/renndev/) | [<img src="https://media.licdn.com/dms/image/v2/D4E03AQHSe5QzvWITMw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730251067698?e=1742428800&v=beta&t=DP2cQhh0VWXRnKQ_sraABqNvTqgpEN9HhsXAjEVI-HA" width=115><br><sub>Rozvania Alcantara</sub>](https://www.linkedin.com/in/rozvania/) |
 
 
-
 ### Agradecimentos:
 
-![image](https://hackmd.io/_uploads/rkm_TNHD1e.png)
+
 
    
