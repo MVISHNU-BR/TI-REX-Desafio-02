@@ -29,6 +29,12 @@ export default function Settings() {
 
   const editUser = async (e: React.FormEvent) => {
     e.preventDefault();
+    const socialForm = document.getElementById("socialInfoForm");
+    const otherForm = document.getElementById("otherForm");
+    if (socialForm)
+      socialForm.dispatchEvent(new Event("submit", { bubbles: true }));
+    if (otherForm)
+      otherForm.dispatchEvent(new Event("submit", { bubbles: true }));
     const userId = user?.id;
 
     if (!userId) {
@@ -121,8 +127,8 @@ export default function Settings() {
             </p>
           </div>
           <form
+            id="personalInfo"
             action=""
-            onSubmit={editUser}
             className="flex flex-wrap sm:gap-5 lg:w-[637px] "
           >
             <FormField
@@ -310,7 +316,7 @@ export default function Settings() {
           </div>
 
           <form
-            onSubmit={editUser}
+            id="SocialInfo"
             className="flex flex-col items-center sm:items-start lg:py-8  lg:w-[637px]"
           >
             <div className="flex items-center gap-1">
@@ -364,12 +370,15 @@ export default function Settings() {
                 className="mb-3 mt-5  text-cinza-input text-sm font-normals"
               />
             </div>
-            <button className="w-[353px] bg-azul-escuro text-white text-center rounded-lg py-3 hover:bg-azul-hover2 sm:w-[410px] lg:self-center">
-              Update Information
-            </button>
           </form>
         </section>
         <div className="flex flex-col items-center justify-center gap-4 pt-[48px] lg:pt-[90px]">
+          <button
+            onClick={editUser}
+            className="w-[353px] bg-azul-escuro text-white text-center rounded-lg py-3 hover:bg-azul-hover2 sm:w-[410px] lg:self-center"
+          >
+            Update Information
+          </button>
           <p className="text-sm sm:text-base">
             <span>Never mind, take me </span>
             <Link
