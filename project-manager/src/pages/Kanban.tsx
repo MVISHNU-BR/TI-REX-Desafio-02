@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import KanbanCard from "../components/Kanban/KanbanCard";
 import KanbanColumn from "../components/Kanban/KanbanColumn";
 import ResponsiveGrid from "../components/Kanban/ResponsiveGrid";
+import PinchAndPan from "../components/Kanban/PinchAndPan";
 
 export default function Kanban() {
 	const cards = [1, 2];
@@ -23,7 +24,7 @@ export default function Kanban() {
 			<Header />
 			<main
 				ref={parentRef}
-				className="relative bg-slate-100 min-h-screen flex flex-col items-center gap-[76px] px-5 pt-36 pb-7 sm:px-9 sm:pt-64 sm:pb-16 sm:gap-16"
+				className="relative bg-slate-100 min-h-screen max-w-none max-h-none flex flex-col items-center gap-[76px] px-5 pt-36 pb-7 overflow-auto touch-auto sm:px-9 sm:pt-64 sm:pb-16 sm:gap-16"
 			>
 				<ResponsiveGrid parentRef={parentRef} />
 				<div className="columns flex w-full justify-center gap-7">
