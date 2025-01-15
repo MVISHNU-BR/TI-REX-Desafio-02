@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export default function Forbidden() {
   return (
-    <>
+    <><div className="w-full h-full min-h-screen flex flex-col justify-between">
          <Header/>
            <div  className="flex items-center justify-center">
              <div className="
@@ -42,6 +42,7 @@ export default function Forbidden() {
              </div>
            </div>
          <Footer/>
+        </div>
        </>
   );
 }
