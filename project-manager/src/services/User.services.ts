@@ -7,7 +7,7 @@ export interface UserInterface {
   userName: string;
   datecreated?: Date;
   email: string;
-  password: string;
+  password?: string;
   role?: string;
   social?: {
     linkedin: string;
@@ -36,6 +36,7 @@ export const postUser = async (param: UserInterface) => {
     return null;
   }
 };
+
 export const GetUser = async (id: string) => {
   try {
     const response = await fetch(`${Baseurl_}/users/${id}`, {
@@ -48,7 +49,26 @@ export const GetUser = async (id: string) => {
     if (!response.ok) {
       throw new Error("Erro ao buscar os dados do usuário");
     }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+export const EditUser = async (id: string, param: UserInterface) => {
+  try {
+    const response = await fetch(`${Baseurl_}/users/${id}`, {
+      method: `PUT`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(param),
+    });
 
+    if (!response.ok) {
+      throw new Error("Erro ao editar dados do usuario");
+    }
     const data = await response.json();
     return data;
   } catch (error) {
