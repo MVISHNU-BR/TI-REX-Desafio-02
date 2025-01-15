@@ -5,10 +5,74 @@ import userImage from "../assets/profile-picture-1.jpg";
 import FormField from "../components/FormField";
 import { Link } from "react-router";
 import Footer from "../components/Footer";
+import { useState } from "react";
+import { EditUser, GetUser, postUser } from "../services/User.services";
 
 export default function Settings() {
   const { user } = useUser();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [instagran, setInstagran] = useState("");
+  const [x, setX] = useState("");
 
+  const imageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files?.[0]) return;
+    const file = event.target.files?.[0];
+    try {
+      await user?.setProfileImage({ file });
+    } catch (error) {
+      console.log("Erro ao editar imagem", error);
+    }
+  };
+
+  const editUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const userId = user?.id;
+
+    if (!userId) {
+      throw new Error("Erro ao obter o userId do usuário criado.");
+    }
+
+    const userData = {
+      id: userId,
+      firstName: name,
+      lastName: lastName,
+      userName: `${name}${lastName}`.toLowerCase() || "",
+      email: email,
+      job: "",
+      role: "",
+      social: {
+        linkedin: linkedin,
+        instagran: instagran,
+        x: x,
+      },
+    };
+    try {
+      await user.update({
+        firstName: name,
+        lastName: lastName,
+      });
+
+      const response = await GetUser(user.id);
+      if (response === null) {
+        await postUser(userData);
+      } else {
+        await EditUser(user.id, userData);
+      }
+    } catch (error) {
+      alert(error);
+      console.log(error);
+    } finally {
+      setEmail("");
+      setName("");
+      setLastName("");
+      setX("");
+      setLinkedin("");
+      setInstagran("");
+    }
+  };
   return (
     <>
       <Header>
@@ -56,12 +120,18 @@ export default function Settings() {
               be changed anytime.
             </p>
           </div>
-          <form action="" className="flex flex-wrap sm:gap-5 lg:w-[637px] ">
+          <form
+            action=""
+            onSubmit={editUser}
+            className="flex flex-wrap sm:gap-5 lg:w-[637px] "
+          >
             <FormField
               htmlFor="FirstName"
               inputType="text"
               labelText="First Name"
+              value={name}
               placeholder="New First Name"
+              onChange={(e) => setName(e.target.value)}
               className="mb-3 min-w-[297px]"
             />
             <FormField
@@ -69,6 +139,8 @@ export default function Settings() {
               inputType="text"
               labelText="Last Name"
               placeholder="New Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               className="mb-3 min-w-[297px]"
             />
             <FormField
@@ -76,6 +148,8 @@ export default function Settings() {
               inputType="text"
               labelText="E-mail"
               placeholder="New e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="mb-3 min-w-[297px] md:min-w-[617px]"
             />
           </form>
@@ -107,13 +181,15 @@ export default function Settings() {
                 </label>
                 <div className="w-[353px] h-12 pl-9 flex justify-between pr-2 border rounded-lg items-center bg-[url('/src/assets/SystemIcons.svg')] bg-no-repeat bg-[12px_center] sm:w-full">
                   <label htmlFor="imageInput" className="text-base">
-                    imageattachment.jpg
+                    Update your image profile
                   </label>
                   <input
                     type="file"
                     id="imageInput"
                     className="hidden w-full"
                     placeholder="Upload Image"
+                    onChange={imageUpload}
+                    accept="image/*"
                   />
                   <button className="">
                     <img
@@ -233,7 +309,10 @@ export default function Settings() {
             </p>
           </div>
 
-          <form className="flex flex-col items-center sm:items-start lg:py-8  lg:w-[637px]">
+          <form
+            onSubmit={editUser}
+            className="flex flex-col items-center sm:items-start lg:py-8  lg:w-[637px]"
+          >
             <div className="flex items-center gap-1">
               <FormField
                 htmlFor="twitter/X"
@@ -246,6 +325,8 @@ export default function Settings() {
                 htmlFor="userTwitter"
                 inputType="text"
                 placeholder="Your Account"
+                value={x}
+                onChange={(e) => setX(e.target.value)}
                 className="mb-3 mt-5  text-cinza-input text-sm font-normal"
               />
             </div>
@@ -261,6 +342,8 @@ export default function Settings() {
                 htmlFor="userInstagram"
                 inputType="text"
                 placeholder="Your Account"
+                value={instagran}
+                onChange={(e) => setInstagran(e.target.value)}
                 className="mb-3 mt-5 text-cinza-input text-sm font-normal"
               />
             </div>
@@ -273,18 +356,20 @@ export default function Settings() {
                 className="mb-3 text-cinza-input text-sm font-normal"
               />
               <FormField
-                htmlFor="userTwitter"
+                htmlFor="userLinkedin"
                 inputType="text"
                 placeholder="Your Account"
+                value={linkedin}
+                onChange={(e) => setLinkedin(e.target.value)}
                 className="mb-3 mt-5  text-cinza-input text-sm font-normals"
               />
             </div>
+            <button className="w-[353px] bg-azul-escuro text-white text-center rounded-lg py-3 hover:bg-azul-hover2 sm:w-[410px] lg:self-center">
+              Update Information
+            </button>
           </form>
         </section>
         <div className="flex flex-col items-center justify-center gap-4 pt-[48px] lg:pt-[90px]">
-          <button className="w-[353px] bg-azul-escuro text-white text-center rounded-lg py-3 hover:bg-azul-hover2 sm:w-[410px] lg:self-center">
-            Update Information
-          </button>
           <p className="text-sm sm:text-base">
             <span>Never mind, take me </span>
             <Link
