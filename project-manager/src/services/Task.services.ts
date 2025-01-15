@@ -21,9 +21,9 @@ export const postTask = async (param: TaskInterface) => {
     return null;
   }
 };
-export const getTasks = async (id: string) => {
+export const getTasks = async () => {
   try {
-    const response = await fetch(`${Baseurl_}/tasks?userId=${id}`, {
+    const response = await fetch(`${Baseurl_}/tasks`, {
       method: `GET`,
       headers: {
         "Content-Type": "application/json",
