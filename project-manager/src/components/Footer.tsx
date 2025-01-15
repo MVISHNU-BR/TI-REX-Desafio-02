@@ -50,12 +50,18 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center justify-between ">
-          <a href="/privacy" className="hover:underline  text-[14px] md:text-[18px]">
+          <a
+            href="/privacy"
+            className="hover:underline  text-[14px] md:text-[18px]"
+          >
             Privacy Policy
           </a>
         </div>
         <div className="flex items-center justify-between">
-        <a href="/terms" className="hover:underline  text-[14px] md:text-[18px]">
+          <a
+            href="/terms"
+            className="hover:underline  text-[14px] md:text-[18px]"
+          >
             Terms of Use
           </a>
         </div>
