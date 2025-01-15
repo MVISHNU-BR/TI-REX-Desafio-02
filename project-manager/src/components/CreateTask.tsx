@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getTasks, postTask } from "../services/Task.services";
+import { postTask } from "../services/Task.services";
 import { TaskInterface } from "../types/TaskInterface";
 import { useUser } from "@clerk/clerk-react";
 
@@ -43,8 +43,7 @@ export default function CreateTask({ setIsModalOpen }: CreateTaskProps) {
     const { name, value } = e.target;
 
     if (name === "endDate") {
-      const today = new Date().toISOString().split("T")[0];
-
+      // const today = new Date().toISOString().split("T")[0];
       // if (value < today) {
       //   alert("End Date must be today or a future date.");
       //   return;
