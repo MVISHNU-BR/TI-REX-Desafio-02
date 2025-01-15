@@ -9,6 +9,7 @@ export default {
       colors: {
         'azul-escuro': '#1E293B',
         'azul-claro': '#92BBFF',
+        'azul-claro-2': '#C7C3FF',
         'azul-dessaturado': '#5C5A79',
         'vinho-transparente': '#23081C',
         'amarelo': '#F59E0B',
