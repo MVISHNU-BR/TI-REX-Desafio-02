@@ -1,17 +1,17 @@
-import Header from "../components/Header";
-import FormField from "../components/FormField";
-import { useSignIn } from "@clerk/clerk-react";
-import { useState } from "react";
-import Footer from "../components/Footer";
-import { Link } from "react-router";
+import Header from '../components/Header';
+import FormField from '../components/FormField';
+import { useSignIn } from '@clerk/clerk-react';
+import { useState } from 'react';
+import Footer from '../components/Footer';
+import { Link } from 'react-router';
 import GoogleLoginButton, {
   FacebookLoginButton,
-} from "../components/SocialLoginButton";
+} from '../components/SocialLoginButton';
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const { signIn, isLoaded } = useSignIn();
 
@@ -19,7 +19,7 @@ export default function Login() {
     preventDefault: () => void;
   }) => {
     e.preventDefault();
-    setError("");
+    setError('');
 
     if (!isLoaded) return;
 
@@ -28,16 +28,16 @@ export default function Login() {
         identifier: email,
         password,
       });
-      window.location.href = "/dashboard";
+      window.location.href = '/dashboard';
     } catch (err) {
-      setError("Erro ao autenticar. Verifique suas credenciais.");
+      setError('Erro ao autenticar. Verifique suas credenciais.');
       console.log(err);
     }
   };
   return (
     <>
       <Header />
-      <section className="h-screen">
+      <section className="sm:h-screen">
         <div className="bg-[url('src/assets/login-bg-phone.png')] bg-no-repeat bg-cover bg-center py-9 px-5 flex items-center justify-center sm:py-36 sm:px-11 lg:bg-none lg:p-0 lg:flex lg:h-full">
           <div className="hidden lg:block self-stretch max-w-[626px] w-full lg:bg-[url('src/assets/login-desktop.png')] bg-no-repeat bg-cover bg-center"></div>
           <main className="w-full bg-white rounded-3xl py-14 px-3 sm:px-16 lg:pt-11 lg:pb-12 lg:px-32">
@@ -48,7 +48,7 @@ export default function Login() {
               Enter your credentials
             </p>
             <p className="text-center sm:text-left text-vinho text-base mb-10">
-              New here? Let's take you to{" "}
+              New here? Let's take you to{' '}
               <Link to="/register" className="text-roxo-claro font-bold">
                 sign up
               </Link>
