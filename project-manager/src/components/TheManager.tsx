@@ -8,7 +8,7 @@ const TheManager = () => {
         className="h-[252px] px-[20.5px] flex flex-col gap-6 md:w-[656px] md:h-[216px] md:mx-auto xl:w-[1100px] xl:h-[192px] xl:flex xl:flex-col xl:gap-6 xl:mx-[170px]
       "
       >
-        <h1 className="text-2xl leading-[48px] text-amarelo-claro md:text-[40px] ">
+        <h1 className="text-2xl leading-[48px] text-amarelo-transparente md:text-[40px] ">
           The Manager
         </h1>
         <p className="text-sm leading-6 md:text-base">
