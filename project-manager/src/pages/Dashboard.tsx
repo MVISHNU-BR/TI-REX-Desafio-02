@@ -25,7 +25,6 @@ export default function Dashboard() {
     fetchData();
   }, [isModalOpen, userId]);
 
-  const cards = [1, 2];
   const users = [
     { name: "John", profilePicUrl: "src/assets/profile-picture-1.jpg" },
     { name: "John", profilePicUrl: "src/assets/profile-picture-2.jpg" },
@@ -37,7 +36,9 @@ export default function Dashboard() {
 
   // Dimensões do elemento pai para grid de fundo
   const parentRef = useRef(null);
-
+  const randonNumber = () => {
+    return Math.floor(Math.random() * 100);
+  };
   return (
     <>
       <Header>
@@ -59,7 +60,7 @@ export default function Dashboard() {
                   priority={task.priority}
                   name={task.title}
                   users={users}
-                  progress={20}
+                  progress={randonNumber()}
                 />
               ))}
           </KanbanColumn>
@@ -75,7 +76,7 @@ export default function Dashboard() {
                   priority={task.priority}
                   name={task.title}
                   users={users}
-                  progress={20}
+                  progress={randonNumber()}
                 />
               ))}
           </KanbanColumn>
@@ -88,7 +89,7 @@ export default function Dashboard() {
                   priority={task.priority}
                   name={task.title}
                   users={users}
-                  progress={20}
+                  progress={randonNumber()}
                 />
               ))}
           </KanbanColumn>
