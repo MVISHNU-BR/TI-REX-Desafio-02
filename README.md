@@ -21,8 +21,7 @@ Este projeto tem como objetivo recriar três páginas de uma ferramenta de produ
     <img src="https://camo.githubusercontent.com/9a89e902a11c3a21f2e6d641460318739486a140336f5f30d24872a0a61faefb/68747470733a2f2f696d616765732e636c65726b2e636f6d2f7374617469632f6c6f676f2d6c696768742d6d6f64652d343030783430302e706e67" height="40" alt="github logo"  /> 
 </div>
 
-## Requisitos:
-
+## 📝 Requisitos:
 
 ### Requisitos Técnicos
 - Utilizar **HTML**, **CSS**, **Typescript**, **React** e **TailwindCSS**.
@@ -87,8 +86,6 @@ Este projeto tem como objetivo recriar três páginas de uma ferramenta de produ
 | `http://localhost:5173/profile`       |  GET     |  Página de perfil do usuário com informações e atividades recentes. | 
 | `http://localhost:5173/404`           |  GET     |  Página não encontrada. Exibida quando o usuário tenta acessar uma rota inexistente. | 
 | `http://localhost:5173/403`           |  GET     |  Página bloqueada, exibida quando um usuário não autenticado tenta acessar uma área restrita. | 
-
-## 📑 Observações
 
 ## 📁 Estrutura do Projeto
 
@@ -168,7 +165,19 @@ Time de colaboradores do Squad Umbrella responsáveis desenvolvimento do projeto
 | [<img src="https://media.licdn.com/dms/image/v2/D4D03AQHJ0OCH7pFHUw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684282731866?e=1742428800&v=beta&t=i1iC8d8abyy3Z-HxKRmE-2fyTJJMQFXA1l65K6vp468" width=115><br><sub>Mahavishnu Jneesh Afonso</sub>](https://www.linkedin.com/in/vishnujneesh/) | [<img src="https://media.licdn.com/dms/image/v2/D4D03AQHrzmkq4eC8Jg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718487658410?e=1742428800&v=beta&t=lOyy9CJ8Eudzwp12S2Y7UHxwqXCSDp1C5spdx1Xm6DE" width=115><br><sub>Renan Casaes</sub>](https://www.linkedin.com/in/renndev/) | [<img src="https://media.licdn.com/dms/image/v2/D4E03AQHSe5QzvWITMw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730251067698?e=1742428800&v=beta&t=DP2cQhh0VWXRnKQ_sraABqNvTqgpEN9HhsXAjEVI-HA" width=115><br><sub>Rozvania Alcantara</sub>](https://www.linkedin.com/in/rozvania/) |
 
 
-### Agradecimentos:
+###  📜 Agradecimentos
+
+Gostaríamos de agradecer  à **Compass UOL** por proporcionar essa oportunidade de aprendizado e por apoiar nosso desenvolvimento durante todo o programa.
+
+
+![image](https://github.com/user-attachments/assets/731ed3ca-0334-42a4-833f-b155791970aa)
+
+
+
+Um agradecimento especial aos instrutores **Jailson de Souza**, **Liliv Vasconcelos**, **Isabelle Hondo** e **Vivian Oliveira** por sua dedicação, paciência e por compartilharem seus conhecimentos de forma tão generosa. Vocês foram fundamentais para nosso crescimento pessoal e profissional.
+
+Este projeto é resultado de um ambiente inspirador e de uma experiência de aprendizado verdadeiramente transformadora.
+
 
 
 
