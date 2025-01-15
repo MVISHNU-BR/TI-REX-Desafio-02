@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function Footer() {
   const [isHovered, setIsHovered] = useState<string | null>(null);
 
   const items = [
     {
-      id: "Facebook",
-      defaultSrc: "src/assets/facebook.svg",
-      hoverSrc: "src/assets/facebook-logoFill-colored.png.png",
+      id: 'Facebook',
+      defaultSrc: 'src/assets/facebook.svg',
+      hoverSrc: 'src/assets/facebook-logoFill-colored.png.png',
     },
     {
-      id: "Instagram",
-      defaultSrc: "src/assets/instagram.svg",
-      hoverSrc: "src/assets/instagran-logo-colored.png",
+      id: 'Instagram',
+      defaultSrc: 'src/assets/instagram.svg',
+      hoverSrc: 'src/assets/instagran-logo-colored.png',
     },
     {
-      id: "Linkedin",
-      defaultSrc: "src/assets/linkedin.svg",
-      hoverSrc: "src/assets/linkedin-logo-colored.png.png",
+      id: 'Linkedin',
+      defaultSrc: 'src/assets/linkedin.svg',
+      hoverSrc: 'src/assets/linkedin-logo-colored.png.png',
     },
   ];
   return (
