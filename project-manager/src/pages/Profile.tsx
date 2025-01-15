@@ -141,7 +141,7 @@ export default function Profile() {
                 Latest activity
               </h2>
               <p className="font-normal text-sm opacity-50 sm:text-base">
-                {user?.username}'s last Interactions
+                {user?.firstName} {user?.lastName}'s last Interactions
               </p>
             </div>
             <div className="flex flex-col gap-8 lg:pl-4">
