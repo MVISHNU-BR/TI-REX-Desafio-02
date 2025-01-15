@@ -15,6 +15,22 @@ export default function Profile() {
     });
   };
 
+  const formatDate = (date: any) => {
+    if (!date) return 'Data de criação';
+
+    const d = new Date(date);
+
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const year = String(d.getFullYear()).slice(2);
+    const hours = d.getHours();
+    const minutes = String(d.getMinutes()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const hour12 = hours % 12 || 12;
+
+    return `${day}/${month}/${year} ${hour12}:${minutes}${ampm}`;
+  };
+
   useEffect(() => {
     setUsername();
   });
@@ -105,10 +121,7 @@ export default function Profile() {
                   Creation date
                 </p>
                 <p className="font-normal text-sm opacity-50 sm:text-base">
-                  @
-                  {user?.createdAt
-                    ? user.createdAt.toString()
-                    : 'Data de criação'}
+                  {formatDate(user?.createdAt)}
                 </p>
               </div>
               <div className="flex">
