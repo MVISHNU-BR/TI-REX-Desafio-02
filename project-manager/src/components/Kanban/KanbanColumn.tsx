@@ -34,7 +34,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = ({
               {classes.text}
             </h1>
           </div>
-          <button className="debug" onClick={onOpenModal}>
+          <button onClick={onOpenModal}>
             <svg
               fill={classes.color}
               className="w-[9px] h-[10px] sm:w-4 sm:h-4 md:w-5 md:h-5"

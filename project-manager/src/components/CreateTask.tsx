@@ -97,7 +97,7 @@ export default function CreateTask({ setIsModalOpen }: CreateTaskProps) {
 
   return (
     <>
-      <div className="h-full w-screen absolute top-36 lg:top-0 z-50 debug flex items-center justify-center bg-black bg-opacity-50">
+      <div className="h-full w-screen absolute top-36 lg:top-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
         <div
           className="
             w-[343px] h-[750px] overflow-auto bg-white p-6 rounded-lg shadow-lg
