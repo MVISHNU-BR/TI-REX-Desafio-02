@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import LinkButton from '../components/LinkButton';
 import checkIcon from '../assets/checkIcon.png';
 import FormField from '../components/FormField';
-import CaroulselImages from '../components/CaroulselImages';
+
 
 function Home() {
   const { signOut } = useClerk();

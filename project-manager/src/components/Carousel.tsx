@@ -10,7 +10,7 @@ const Carousel: React.FC<CarouselProps> = ({ children: slides }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 740);
       setCurr(0);
     };
 
@@ -40,7 +40,7 @@ const Carousel: React.FC<CarouselProps> = ({ children: slides }) => {
         : curr
     );
 
-  const slideWidth = isMobile ? 80 : 15;
+  const slideWidth = isMobile ? 80 : 20;
 
   return (
     <div className="overflow-hidden relative">
