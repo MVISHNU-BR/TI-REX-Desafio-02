@@ -7,15 +7,18 @@ import { Link } from 'react-router';
 import GoogleLoginButton, {
   FacebookLoginButton,
 } from '../components/SocialLoginButton';
+import Loading from '../components/Loading';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [load, setLoad] = useState(false);
 
   const { signIn, isLoaded } = useSignIn();
 
   const handleEmailPasswordLogin = async (e: React.FormEvent) => {
+    setLoad(true);
     e.preventDefault();
     setError('');
 
@@ -30,6 +33,8 @@ export default function Login() {
     } catch (err) {
       setError('Erro ao autenticar. Verifique suas credenciais.');
       console.log(err);
+    } finally {
+      setLoad(false);
     }
   };
 
@@ -77,7 +82,7 @@ export default function Login() {
                   className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4"
                   type="submit"
                 >
-                  Login
+                   {load?<Loading className='w-5 h-5' /> : "Login"}
                 </button>
               </form>
               <p className="text-center text-vinho text-base leading-6 mb-2">

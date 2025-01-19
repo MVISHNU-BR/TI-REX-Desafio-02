@@ -53,10 +53,10 @@ export default function Profile() {
                 />
                 <div className="text-wrap">
                   <h1 className="font-medium text-4xl mb-1 sm:text-5xl">
-                    {user?.fullName || 'Usuário'}
+                    {user?.fullName || 'Usuário'} {}
                   </h1>
                   <p className="font-normal text-xl opacity-70 sm:text-3xl">
-                    @{user?.username || 'Usuário'}
+                    @{user?.username || 'Usuário'} 
                   </p>
                 </div>
               </div>
