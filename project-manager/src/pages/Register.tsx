@@ -1,24 +1,25 @@
-import { useSignUp } from "@clerk/react-router";
-import FormField from "../components/FormField";
-import Header from "../components/Header";
-import { useState } from "react";
+import { useSignUp } from '@clerk/react-router';
+import FormField from '../components/FormField';
+import Header from '../components/Header';
+import { useState } from 'react';
 import GoogleLoginButton, {
   FacebookLoginButton,
-} from "../components/SocialRegisterButton";
-import Footer from "../components/Footer";
-import { postUser } from "../services/User.services";
+} from '../components/SocialRegisterButton';
+import Footer from '../components/Footer';
+import { postUser } from '../services/User.services';
+import Loading from '../components/Loading';
 
 export default function Register() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [job, setJob] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [job, setJob] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const { signUp, isLoaded } = useSignUp();
+  const [load, setLoad] = useState(false);
 
-  
   const postRegister = async (userId?: string) => {
     const user = {
       id: userId,
@@ -29,21 +30,22 @@ export default function Register() {
       email: email,
       job: job,
       password: password,
-      role: "",
+      role: '',
       social: {
-        linkedin: "",
-        instagran: "",
-        x: "",
+        linkedin: '',
+        instagran: '',
+        x: '',
       },
     };
     await postUser(user);
   };
 
   const handleEmailPasswordRegister = async (e: React.FormEvent) => {
+    setLoad(true);
     e.preventDefault();
-    setError("");
+    setError('');
 
-    setSuccessMessage("");
+    setSuccessMessage('');
     if (!isLoaded) return;
     try {
       await signUp.create({
@@ -57,20 +59,22 @@ export default function Register() {
       const userId = signUp.createdUserId;
 
       if (!userId) {
-        throw new Error("Erro ao obter o userId do usuário criado.");
+        throw new Error('Erro ao obter o userId do usuário criado.');
       }
 
       await postRegister(userId);
-      setSuccessMessage("Account created successfully! Check your email.");
+      setSuccessMessage('Account created successfully! Check your email.');
       setTimeout(() => {
-        window.location.href = "/dashboard";
+        window.location.href = '/dashboard';
       }, 3000);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      console.error("Erro on register: ", err);
+      console.error('Erro on register: ', err);
       setError(
-        err.errors ? err.errors[0]?.message : "error on create account."
+        err.errors ? err.errors[0]?.message : 'error on create account.'
       );
+    } finally {
+      setLoad(false);
     }
   };
 
@@ -84,7 +88,7 @@ export default function Register() {
               Sign up Information
             </h1>
             <p className="text-center sm:text-left text-vinho text-base mb-10 sm:mb-[65px]">
-              Already have an account?{" "}
+              Already have an account?{' '}
               <a href="/login" className="text-roxo-claro font-bold">
                 Log in.
               </a>
@@ -142,10 +146,10 @@ export default function Register() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button
-                className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4"
+                className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4 hover:bg-azul-hover2 transition duration-200 ease-in-out"
                 type="submit"
               >
-                Create an account
+                {load ? <Loading className='w-5 h-5'/> : 'Create an account'}
               </button>
             </form>
             <div id="clerk-captcha" />
