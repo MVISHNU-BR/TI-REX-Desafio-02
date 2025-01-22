@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import Footer from "../components/Footer";
 import { useState } from "react";
 import { EditUser, GetUser, postUser } from "../services/User.services";
+import Loading from "../components/Loading";
 
 export default function Settings() {
   const { user } = useUser();
@@ -16,6 +17,7 @@ export default function Settings() {
   const [linkedin, setLinkedin] = useState("");
   const [instagran, setInstagran] = useState("");
   const [x, setX] = useState("");
+  const [load, setLoad] = useState(false);
 
   const imageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files?.[0]) return;
@@ -28,6 +30,7 @@ export default function Settings() {
   };
 
   const editUser = async (e: React.FormEvent) => {
+    setLoad(true)
     e.preventDefault();
     const socialForm = document.getElementById("socialInfoForm");
     const otherForm = document.getElementById("otherForm");
@@ -82,6 +85,7 @@ export default function Settings() {
       setX("");
       setLinkedin("");
       setInstagran("");
+      setLoad(false)
     }
   };
   return (
@@ -382,7 +386,8 @@ export default function Settings() {
             onClick={editUser}
             className="w-[353px] bg-azul-escuro text-white text-center rounded-lg py-3 hover:bg-azul-hover2 sm:w-[410px] lg:self-center"
           >
-            Update Information
+            {load?<Loading className='w-5 h-5' /> : "Update"}
+            
           </button>
           <p className="text-sm sm:text-base">
             <span>Never mind, take me </span>

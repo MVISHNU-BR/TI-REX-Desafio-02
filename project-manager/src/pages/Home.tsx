@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import LinkButton from '../components/LinkButton';
 import checkIcon from '../assets/checkIcon.png';
 import FormField from '../components/FormField';
+import Loading from '../components/Loading';
 
 
 function Home() {
