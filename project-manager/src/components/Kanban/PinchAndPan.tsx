@@ -1,96 +1,124 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 
-const PinchAndPan = ({ children }) => {
-  const containerRef = useRef(null);
-  const [transform, setTransform] = useState({
-    scale: 1,
-    translateX: 0,
-    translateY: 0,
-  });
+interface TouchComponentProps {
+  children: React.ReactNode;
+}
 
-  const [lastTouches, setLastTouches] = useState(null);
+const TouchComponent = ({children}: TouchComponentProps) => {
+  const [activeTouches, setActiveTouches] = useState([]);
+  const [zoom, setZoom] = useState(null);
+  const [location, setLocation] = useState({x: 0, y: 0});
+  const lastLocation = useRef({ x: 0, y: 0 });
 
-  const handleTouchStart = (e) => {
-    if (e.touches.length === 2) {
-      setLastTouches(e.touches);
+  const isDragging = useRef(false);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    lastLocation.current = {
+      x: e.clientX - location.x,
+      y: e.clientY - location.y,
+    };
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+
+    const newLocation = {
+      x: e.clientX - lastLocation.current.x,
+      y: e.clientY - lastLocation.current.y,
+    };
+
+    setLocation(newLocation);
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -10 : 10;
+      setZoom((prevZoom) => Math.max(10, Math.min(500, prevZoom + delta)));
     }
   };
 
-  const handleTouchMove = (e) => {
-    if (e.touches.length === 2 && lastTouches) {
-      const [touch1, touch2] = e.touches;
-      const [lastTouch1, lastTouch2] = lastTouches;
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touches = Array.from(e.touches).slice(0, 2).map((touch) => ({
+      identifier: touch.identifier,
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    }));
+    setActiveTouches(touches);
+  };
 
-      // Distância inicial e final entre os dedos
-      const prevDistance = Math.hypot(
-        lastTouch1.pageX - lastTouch2.pageX,
-        lastTouch1.pageY - lastTouch2.pageY
-      );
-      const currDistance = Math.hypot(
-        touch1.pageX - touch2.pageX,
-        touch1.pageY - touch2.pageY
-      );
+  const handleTouchMove = (e: React.TouchEvent) => {
+    const touches = Array.from(e.touches).slice(0, 2).map((touch) => ({
+      identifier: touch.identifier,
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    }));
+    
+    if(touches.length === 2) {
+      const newZoom = calculateZoom(touches);
+      setZoom(Math.trunc(newZoom));
 
-      // Calcula o zoom baseado na mudança de distância
-      const scaleChange = currDistance / prevDistance;
+    } else {
+      const { clientX: startX, clientY: startY } = activeTouches[0];
+      const currX = touches[0].clientX;
+      const currY = touches[0].clientY;
 
-      // Atualiza escala
-      setTransform((prev) => ({
-        ...prev,
-        scale: Math.min(Math.max(prev.scale * scaleChange, 1), 3), // Limita entre 1x e 3x
-      }));
+      const dx = currX - startX;
+      const dy = currY - startY;
 
-      // Calcula o movimento do centro do pinch
-      const centerX =
-        (touch1.pageX + touch2.pageX) / 2 - containerRef.current.offsetLeft;
-      const centerY =
-        (touch1.pageY + touch2.pageY) / 2 - containerRef.current.offsetTop;
+      const newLocation = {
+        x: lastLocation.current.x + dx / 5,
+        y: lastLocation.current.y + dy / 5,
+      };
 
-      setTransform((prev) => ({
-        ...prev,
-        translateX: prev.translateX + (centerX - prev.translateX) * (scaleChange - 1),
-        translateY: prev.translateY + (centerY - prev.translateY) * (scaleChange - 1),
-      }));
-
-      setLastTouches(e.touches);
-    } else if (e.touches.length === 1 && lastTouches) {
-      // Movimento de pan (com um dedo)
-      const touch = e.touches[0];
-      const lastTouch = lastTouches[0];
-
-      setTransform((prev) => ({
-        ...prev,
-        translateX: prev.translateX + touch.pageX - lastTouch.pageX,
-        translateY: prev.translateY + touch.pageY - lastTouch.pageY,
-      }));
-
-      setLastTouches(e.touches);
+      setLocation(newLocation);
     }
   };
 
   const handleTouchEnd = () => {
-    setLastTouches(null); // Limpa os toques após o gesto
+    lastLocation.current = location;
+    setActiveTouches([]);
   };
+
+  const calculateZoom = (touches: React.TouchList) => {
+    if (touches.length < 2) {
+      return 0;
+    }
+
+    const [touch1, touch2] = touches;
+    const dx = touch2.clientX - touch1.clientX;
+    const dy = touch2.clientY - touch1.clientY;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  };
+
+
 
   return (
     <div
-      ref={containerRef}
-      className="relative overflow-hidden w-full h-full touch-none"
+      id="pinchAndPan"
+      className="absolute top-0 left-[50] max-w-none max-h-none h-full flex items-center justify-center touch-none"
+      style={{
+        transform: `scale(${zoom}%) translate(${location.x}%, ${location.y}%)`,
+      }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onWheel={handleWheel}
     >
-      <div
-        className="absolute"
-        style={{
-          transform: `scale(${transform.scale}) translate(${transform.translateX}px, ${transform.translateY}px)`,
-          transformOrigin: "center center",
-        }}
-      >
+      <div className="flex justify-center gap-[5px] px-9 sm:gap-7 xl:py-10">
         {children}
       </div>
     </div>
   );
 };
 
-export default PinchAndPan;
+export default TouchComponent;

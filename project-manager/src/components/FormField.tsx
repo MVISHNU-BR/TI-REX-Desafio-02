@@ -13,7 +13,7 @@ export default function FormField({
     <>
       <label
         htmlFor={htmlFor}
-        className={`flex flex-col text-vinho font-medium font-sm ${className}`}
+        className={`flex flex-col text-vinho font-medium text-sm ${className}`}
       >
         {labelText}
         <input
