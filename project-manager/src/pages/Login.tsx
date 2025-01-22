@@ -79,7 +79,7 @@ export default function Login() {
                 />
                 {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
                 <button
-                  className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4"
+                  className="w-full bg-azul-escuro text-white rounded-lg py-2 px-4 hover:bg-azul-hover2 transition duration-200 ease-in-out"
                   type="submit"
                 >
                    {load?<Loading className='w-5 h-5' /> : "Login"}

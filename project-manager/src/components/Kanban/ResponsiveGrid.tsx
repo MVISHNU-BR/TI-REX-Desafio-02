@@ -41,8 +41,10 @@ const ResponsiveGrid: React.FC<ChildProps> = ({parentRef}) => {
   const { rows, columns } = gridDimensions;
   const tileCount = rows * columns;
 
+  // Tailwind não estava atualizando os estilos após resize, por isso atributo style.
   return (
     <div
+      id="grid"
       style={{
         position: "absolute",
         top: "0",
